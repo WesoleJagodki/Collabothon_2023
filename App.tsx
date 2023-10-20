@@ -4,8 +4,8 @@ import { GluestackUIProvider } from '@gluestack-ui/themed';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 
-import { RootTab } from './src/Navigator/RootTab';
-import { WelcomeScreen } from './src/Screen/Welcome/WelcomeScreen';
+import { RootTab } from './src/Frontend/Navigator/RootTab';
+import { WelcomeScreen } from './src/Frontend/Screen/Welcome/WelcomeScreen';
 
 const Stack = createStackNavigator();
 export default function App() {

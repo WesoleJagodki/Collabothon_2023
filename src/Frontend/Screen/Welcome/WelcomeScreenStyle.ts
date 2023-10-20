@@ -13,6 +13,6 @@ export const welcomeScreen = StyleSheet.create({
     fontSize: 24,
     fontFamily: 'Work Sans',
     fontWeight: '700',
-    wordWrap: 'break-word'
-  }
+    wordWrap: 'break-word',
+  },
 });
