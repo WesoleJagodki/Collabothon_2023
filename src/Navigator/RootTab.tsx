@@ -8,7 +8,6 @@ const Tab = createBottomTabNavigator();
 export const RootTab = function () {
   return (
     <Tab.Navigator screenOptions={{ headerShown: false }}>
-      <Tab.Screen name="Root" component={WelcomeScreen} options={{ title: 'Home' }} />
       <Tab.Screen name="LoginScreen" component={LoginScreen} options={{ title: 'Login' }} />
     </Tab.Navigator>
   );
