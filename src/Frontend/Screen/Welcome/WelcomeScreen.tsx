@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
 import { Text, Box, Image } from '@gluestack-ui/themed';
-import AppLogo from "../../Images/app_logo_savequest.svg"
+import AppLogo from '../../Images/app_logo_savequest.svg';
 import { welcomeScreen } from './WelcomeScreenStyle';
 import { commonStyle } from '../CommonStyle';
 
@@ -16,9 +16,12 @@ export function WelcomeScreen({ navigation }: any) {
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      opacityModifier.value = withTiming(0.0, { duration: ANIMATION_TIME_MS, easing: Easing.inOut(Easing.quad) })
-    }, PRE_DELAY_MS)
-    return () => clearTimeout(timeout)
+      opacityModifier.value = withTiming(0.0, {
+        duration: ANIMATION_TIME_MS,
+        easing: Easing.inOut(Easing.quad),
+      });
+    }, PRE_DELAY_MS);
+    return () => clearTimeout(timeout);
   });
 
   useEffect(() => {
@@ -33,7 +36,7 @@ export function WelcomeScreen({ navigation }: any) {
       <Animated.View style={[welcomeScreen.container, { opacity: opacityModifier }]}>
         <Image size='md' source={AppLogo} style={welcomeScreen.appLogo}></Image>
         <Text style={welcomeScreen.appName}>SaveQuest</Text>
-      </Animated.View>
+      </Animated.View >
     </Box >
   );
 }
