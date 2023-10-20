@@ -13,7 +13,7 @@ export const PutUser = (user_id: number) => {
       date_of_birth: '18/06/1949',
       sex: 'Male',
     })
-    .then((response) => {
-      console.log('Add Data to DB: ' + JSON.stringify(response.data));
-    });
+      .catch(response => {
+          console.log(JSON.stringify(response));
+      })
 };

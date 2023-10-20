@@ -13,6 +13,6 @@ export const PostUser = () => {
       sex: 'Example',
     })
     .then((response) => {
-      console.log('Add Data to DB: ' + JSON.stringify(response.data));
+      console.log('Post Data to DB: ' + JSON.stringify(response.data));
     });
 };
