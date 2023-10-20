@@ -2,23 +2,14 @@ name: Deploy
 
 on:
   workflow_dispatch:
-  pull_request:
-    branches:
-      - master
   push:
     branches:
       - master
 
 jobs:
   deploy_ios:
-    name: Deploy for ${{ matrix.platform.os }}
-    runs-on: ${{ matrix.platform.runner }}
-    strategy:
-      matrix:
-        platform: [
-          {runner: 'macos-latest', os: 'ios'},
-          {runner: 'ubuntu-latest', os: 'android'}
-        ]
+    name: Deploy ios and Android
+    runs-on: ubuntu-latest
 
     defaults:
       run:
