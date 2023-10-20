@@ -20,6 +20,13 @@ export function WelcomeScreen({ navigation }: any) {
     return () => clearTimeout(timeout)
   });
 
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      navigation.navigate("RootTab");
+    }, PRE_DELAY_MS + ANIMATION_TIME_MS)
+    return () => clearTimeout(timeout)
+  });
+
   return (
     <Box style={welcomeScreen.container}>
       <Animated.View style={[welcomeScreen.container, { opacity: opacityModifier }]}>
