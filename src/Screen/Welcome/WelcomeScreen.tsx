@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
-import { Button, Text, Box, Image } from '@gluestack-ui/themed';
+import { Text, Box, Image } from '@gluestack-ui/themed';
 import AppLogo from "../../Images/app_logo_savequest.svg"
 import { welcomeScreen } from './WelcomeScreenStyle';
 import { commonStyle } from '../CommonStyle';

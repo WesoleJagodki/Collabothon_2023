@@ -1,7 +1,6 @@
 import { Dimensions, StyleSheet } from 'react-native';
 
 const screen_width = Dimensions.get('window').width;
-const screen_height = Dimensions.get('window').height;
 
 export const welcomeScreen = StyleSheet.create({
   container: {
@@ -19,6 +18,6 @@ export const welcomeScreen = StyleSheet.create({
   },
   appLogo: {
     width: screen_width / 2,
-    height: screen_height / 8
+    height: screen_width / 3
   }
 });

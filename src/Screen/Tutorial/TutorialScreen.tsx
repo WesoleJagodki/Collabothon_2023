@@ -1,10 +1,12 @@
-import { Text, Box, Button } from '@gluestack-ui/themed';
+import { Text, Box, Button, ButtonText } from '@gluestack-ui/themed';
 import { commonStyle } from '../CommonStyle';
 
 export function TutorialScreen({ navigation }: any) {
     return (
         <Box style={commonStyle.appScreen}>
-            <Button>Skip</Button>
+            <Button onPress={() => { navigation.navigate("RootTab"); }}>
+                <ButtonText>Skip</ButtonText>
+            </Button>
             <Text>SaveQuest</Text>
         </Box >
     );

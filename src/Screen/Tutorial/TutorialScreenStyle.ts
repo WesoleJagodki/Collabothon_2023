@@ -1,7 +1,4 @@
-import { Dimensions, StyleSheet } from 'react-native';
-
-const screen_width = Dimensions.get('window').width;
-const screen_height = Dimensions.get('window').height;
+import { StyleSheet } from 'react-native';
 
 export const tutorialScreen = StyleSheet.create({
   container: {
@@ -17,8 +14,4 @@ export const tutorialScreen = StyleSheet.create({
     fontWeight: '700',
     wordWrap: 'break-word'
   },
-  appLogo: {
-    width: screen_width / 2,
-    height: screen_height / 8
-  }
 });
