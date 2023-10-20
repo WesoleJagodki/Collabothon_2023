@@ -1,10 +1,10 @@
-import { Button, Text, View } from '@gluestack-ui/themed';
+import { Button, Text, Box } from '@gluestack-ui/themed';
 
 export function WelcomeScreen({ navigation }: any) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <Box style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Test 123</Text>
-      <Button onPress={() => navigation.navigate('LoginScreen')}>Click here</Button>
-    </View>
+      <Button onPress={() => navigation.navigate('LoginScreen')}><Text>Click here</Text></Button>
+    </Box>
   );
 }
