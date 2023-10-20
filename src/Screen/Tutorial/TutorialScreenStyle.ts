@@ -3,7 +3,7 @@ import { Dimensions, StyleSheet } from 'react-native';
 const screen_width = Dimensions.get('window').width;
 const screen_height = Dimensions.get('window').height;
 
-export const welcomeScreen = StyleSheet.create({
+export const tutorialScreen = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
