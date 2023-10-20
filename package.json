@@ -16,6 +16,7 @@
     "@gluestack-style/react": "^1.0.8",
     "@gluestack-ui/config": "^1.0.3",
     "@gluestack-ui/themed": "^1.0.8",
+    "@react-navigation/bottom-tabs": "^6.5.10",
     "@react-navigation/native": "^6.1.9",
     "@react-navigation/native-stack": "^6.9.15",
     "@typescript-eslint/eslint-plugin": "^6.8.0",
