@@ -14,13 +14,13 @@ export const signuploginScreen = StyleSheet.create({
   },
 
   loginText1: {
-    fontSize: 54,
+    fontSize: 64,
     color: '#14C07F',
     fontStyle: 'normal',
     fontWeight: '700',
     letterSpacing: -1.28,
-    fontFamily: 'ws-bold',
-    marginBottom: 16,
+    fontFamily: 'ws-regular',
+    paddingTop: 40,
   },
 
   loginText2: {
@@ -29,6 +29,7 @@ export const signuploginScreen = StyleSheet.create({
     textAlign: 'center',
     width: screen_width * 0.9,
     fontFamily: 'ws-regular',
+    marginTop: 25,
     marginBottom: 70,
   },
 
