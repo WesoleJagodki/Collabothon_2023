@@ -59,7 +59,7 @@ export function CreateNewAccountScreen({ navigation }: any) {
         </HStack>
         <Button
           style={create_new_accountScreen.button}
-          onPress={() => navigation.navigate('LoginScreen')}>
+          onPress={() => navigation.navigate('RegistrationFinishedScreen')}>
           <Text style={create_new_accountScreen.button_text}>GET STARTED</Text>
         </Button>
         <Center>
