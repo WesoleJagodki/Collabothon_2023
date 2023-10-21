@@ -59,10 +59,12 @@ export const textStyles = StyleSheet.create({
   },
   buttonText: {
     color: 'white',
-    fontFamily: 'ws-regular',
     fontSize: 16,
-    fontStyle: 'normal',
+    fontFamily: 'ws-bold',
     fontWeight: '700',
+    textTransform: 'uppercase',
+    letterSpacing: 0.64,
+    wordWrap: 'break-word',
   },
   link: {
     color: 'var(--Iris, #4B4DED)',

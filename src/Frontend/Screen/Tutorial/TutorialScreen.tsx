@@ -6,6 +6,7 @@ import { commonStyle } from '../CommonStyle';
 export function TutorialScreen({
   navigation,
   imageSource,
+  seconcdImage,
   imageStyle,
   imageAlt,
   heading,
@@ -25,6 +26,7 @@ export function TutorialScreen({
       <Image alt={imageAlt} source={imageSource} style={imageStyle} />
       <Text style={tutorialScreen.tutorialHeading}>{heading}</Text>
       <Text style={tutorialScreen.tutorialDesc}>{description}</Text>
+      <Image alt="pagination" source={seconcdImage} style={tutorialScreen.second_image} />
       <Button
         style={tutorialScreen.buttonNext}
         onPress={() => {
@@ -41,6 +43,7 @@ export const Tutorial1 = ({ navigation }: any) => {
     <TutorialScreen
       navigation={navigation}
       imageSource={require('../../Images/piggy_bank_coins.png')}
+      seconcdImage={require('../../Images/pagination_1.png')}
       imageStyle={tutorialScreen.tutorialImage1}
       imageAlt="PiggyImage"
       heading="Welcome to SaveQuest!"
@@ -57,6 +60,7 @@ export const Tutorial2 = ({ navigation }: any) => {
     <TutorialScreen
       navigation={navigation}
       imageSource={require('../../Images/piggy_girl_coin.png')}
+      seconcdImage={require('../../Images/pagination_2.png')}
       imageStyle={tutorialScreen.tutorialImage2}
       imageAlt="PiggyGirlImage"
       heading="Set Your Goals, Start Your Quests!"
@@ -74,6 +78,7 @@ export const Tutorial3 = ({ navigation }: any) => {
     <TutorialScreen
       navigation={navigation}
       imageSource={require('../../Images/piggy_girl_calendar_coin.png')}
+      seconcdImage={require('../../Images/pagination_3.png')}
       imageStyle={tutorialScreen.tutorialImage3}
       imageAlt="PiggyGirlCalendarImage"
       heading="Earn Rewards, Boost Your Savings!"

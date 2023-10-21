@@ -7,8 +7,8 @@ export const tutorialScreen = StyleSheet.create({
   skipButton: {
     ...textStyles.small,
     position: 'absolute',
-    top: 20,
-    right: 20,
+    top: 36,
+    right: 16,
   },
   tutorialImage1: {
     width: screen_width * 0.73,
@@ -45,7 +45,15 @@ export const tutorialScreen = StyleSheet.create({
     position: 'absolute',
     bottom: 50,
     width: screen_width * 0.8,
-    height: 56,
+    height: 64,
+    backgroundColor: '#028760',
+    borderRadius: 10,
+    marginBottom: 20,
     ...textStyles.buttonText,
+  },
+  second_image: {
+    width: screen_width * 0.14,
+    height: screen_width * 0.016,
+    marginTop: 30,
   },
 });
