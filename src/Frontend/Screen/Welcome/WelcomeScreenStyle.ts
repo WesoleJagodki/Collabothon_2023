@@ -14,10 +14,10 @@ export const welcomeScreen = StyleSheet.create({
     fontSize: 24,
     fontFamily: 'Work Sans',
     fontWeight: '700',
-    wordWrap: 'break-word'
+    wordWrap: 'break-word',
   },
   appLogo: {
     width: screen_width / 2,
-    height: screen_width / 3
-  }
+    height: screen_width / 3,
+  },
 });

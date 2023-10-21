@@ -1,4 +1,5 @@
-import { Text, Box, Button, ButtonText, Image } from '@gluestack-ui/themed';
+import { Text, Box, Button, ButtonText } from '@gluestack-ui/themed';
+
 import { commonStyle } from '../CommonStyle';
 
 import PiggyImage from '../../Images/piggy_bank_coins.svg';

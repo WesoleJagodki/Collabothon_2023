@@ -1,12 +1,10 @@
-import React, { useEffect } from 'react';
-
 import { Text, Box, Image } from '@gluestack-ui/themed';
-import AppLogo from '../../Images/app_logo_savequest.svg';
-import { welcomeScreen } from './WelcomeScreenStyle';
-import { commonStyle } from '../CommonStyle';
+import React, { useEffect } from 'react';
+import Animated, { Easing, useSharedValue, withTiming } from 'react-native-reanimated';
 
-import { Easing, useSharedValue, withTiming } from 'react-native-reanimated';
-import Animated from 'react-native-reanimated';
+import { welcomeScreen } from './WelcomeScreenStyle';
+import AppLogo from '../../Images/app_logo_savequest.svg';
+import { commonStyle } from '../CommonStyle';
 
 const PRE_DELAY_MS = 500;
 const ANIMATION_TIME_MS = 500;
@@ -26,9 +24,9 @@ export function WelcomeScreen({ navigation }: any) {
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      navigation.navigate("TutorialScreen");
-    }, PRE_DELAY_MS + ANIMATION_TIME_MS)
-    return () => clearTimeout(timeout)
+      navigation.navigate('TutorialScreen');
+    }, PRE_DELAY_MS + ANIMATION_TIME_MS);
+    return () => clearTimeout(timeout);
   });
 
   return (
@@ -36,7 +34,7 @@ export function WelcomeScreen({ navigation }: any) {
       <Animated.View style={[welcomeScreen.container, { opacity: opacityModifier }]}>
         <Image alt='applogo' size='full' source={AppLogo} style={welcomeScreen.appLogo}></Image>
         <Text style={welcomeScreen.appName}>SaveQuest</Text>
-      </Animated.View >
-    </Box >
+      </Animated.View>
+    </Box>
   );
 }
