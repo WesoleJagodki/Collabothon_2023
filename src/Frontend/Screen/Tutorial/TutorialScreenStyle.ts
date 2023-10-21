@@ -2,13 +2,14 @@ import { Dimensions, StyleSheet } from 'react-native';
 
 import { textStyles } from '../../TextStyle';
 const screen_width = Dimensions.get('window').width;
+const screen_height = Dimensions.get('window').height;
 
 export const tutorialScreen = StyleSheet.create({
   skipButton: {
     ...textStyles.small,
     position: 'absolute',
-    top: 36,
-    right: 16,
+    top: screen_width*0.1,
+    right: screen_width*0.08,
   },
   tutorialImage1: {
     width: screen_width * 0.73,
