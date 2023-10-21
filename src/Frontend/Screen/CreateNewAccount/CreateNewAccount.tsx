@@ -12,7 +12,7 @@ import {
   CheckboxIcon,
   CheckboxIndicator,
 } from '@gluestack-ui/themed';
-import React from "react";
+import React from 'react';
 
 import { commonStyle } from '../CommonStyle';
 import { create_new_accountScreen } from './CreateNewAccountStyle';
@@ -68,8 +68,12 @@ export function CreateNewAccountScreen({ navigation }: any) {
             </Text>
           </HStack>
         </Center>
-        </Box>
-      <Image alt="Open home safe with money" source={require('../../Images/open_home_safe_with_money.png')} style={create_new_accountScreen.image}/>
+      </Box>
+      <Image
+        alt="Open home safe with money"
+        source={require('../../Images/open_home_safe_with_money.png')}
+        style={create_new_accountScreen.image}
+      />
     </Box>
   );
 }
