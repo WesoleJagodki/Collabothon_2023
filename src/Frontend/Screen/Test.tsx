@@ -2,10 +2,10 @@ import { Text, Box } from '@gluestack-ui/themed';
 
 import { commonStyle } from './CommonStyle';
 
-export function Test({ navigation }: any) {
+export function Dashboard({ navigation }: any) {
   return (
     <Box style={commonStyle.appScreen}>
-      <Text>Test</Text>
+      <Text>Dashboard</Text>
     </Box>
   );
 }
