@@ -5,6 +5,7 @@ import { LoginScreen } from '../Screen/Login/LoginScreen';
 import { AccountDetails } from '../Screen/Registration/AccountDetails';
 import { Tutorial1, Tutorial2, Tutorial3 } from '../Screen/Tutorial/TutorialScreen';
 import { WelcomeScreen } from '../Screen/Welcome/WelcomeScreen';
+import {SignupLoginScreen} from "../Screen/SignupLogin_Screen/SignupLoginScreen";
 
 const Stack = createStackNavigator();
 
@@ -15,6 +16,7 @@ export function RootStack() {
       <Stack.Screen name="TutorialScreen1" component={Tutorial1} options={{ title: 'Tutorial' }} />
       <Stack.Screen name="TutorialScreen2" component={Tutorial2} options={{ title: 'Tutorial' }} />
       <Stack.Screen name="TutorialScreen3" component={Tutorial3} options={{ title: 'Tutorial' }} />
+        <Stack.Screen name="SignupLoginScreen" component={SignupLoginScreen} options={{ title: 'Signup/Login' }} />
       <Stack.Screen name="LoginScreen" component={LoginScreen} options={{ title: 'Login' }} />
       <Stack.Screen
         name="AccountDetailsScreen"
