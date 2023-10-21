@@ -45,7 +45,8 @@
     "expo-font": "~11.4.0",
     "expo-splash-screen": "~0.20.5",
     "expo-image-picker": "~14.3.2",
-    "expo-camera": "~13.4.4"
+    "expo-camera": "~13.4.4",
+    "expo-av": "~13.4.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
