@@ -1,5 +1,5 @@
-import React from 'react';
 import { Button, Text, Box } from '@gluestack-ui/themed';
+import React from 'react';
 
 import { GetUser } from '../../../Backend/PostgresSQL_User/GetUser';
 import { PostUser } from '../../../Backend/PostgresSQL_User/PostUser';
