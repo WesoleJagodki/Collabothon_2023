@@ -17,12 +17,12 @@ export const tutorialScreen = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     color: 'white',
-    margin: 10
+    margin: 10,
   },
   tutorialDesc: {
     fontSize: 14,
     color: '#CAD1DB',
     textAlign: 'center',
-    width: screen_width * 0.9
-  }
+    width: screen_width * 0.9,
+  },
 });

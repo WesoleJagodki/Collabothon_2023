@@ -32,7 +32,7 @@ export function WelcomeScreen({ navigation }: any) {
   return (
     <Box style={commonStyle.appScreen}>
       <Animated.View style={[welcomeScreen.container, { opacity: opacityModifier }]}>
-        <Image alt='applogo' size='full' source={AppLogo} style={welcomeScreen.appLogo}></Image>
+        <Image alt="applogo" size="full" source={AppLogo} style={welcomeScreen.appLogo} />
         <Text style={welcomeScreen.appName}>SaveQuest</Text>
       </Animated.View>
     </Box>
