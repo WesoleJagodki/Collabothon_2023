@@ -2,7 +2,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import { RootTab } from './RootTab';
 import { Tutorial1, Tutorial2, Tutorial3 } from '../Screen/Tutorial/TutorialScreen';
-import { LoginScreen } from '../Screen/LoginScreen';
+import { LoginScreen } from '../Screen/Login/LoginScreen';
 import { WelcomeScreen } from '../Screen/Welcome/WelcomeScreen';
 
 const Stack = createStackNavigator();
