@@ -1,9 +1,31 @@
+import { useState } from 'react';
 import { Button, Text, Box, Center, Image, Input, InputField, HStack } from '@gluestack-ui/themed';
 
 import { account_detailsScreen } from './AccountDetailsStyle';
 import { commonStyle } from '../CommonStyle';
 
+import * as ImagePicker from 'expo-image-picker';
+
 export function AccountDetails({ navigation }: any) {
+  const [image, setImage] = useState<string>(require('../../Images/camera.png'));
+  const [pictureStyle, setPictureStyle] = useState(account_detailsScreen.image);
+
+  const pickImage = async () => {
+    let result = await ImagePicker.launchCameraAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 1,
+    });
+
+    console.log(result);
+
+    if (!result.canceled) {
+      setPictureStyle(account_detailsScreen.pickedPicture);
+      setImage(result.assets[0].uri);
+    }
+  };
+
   return (
     <Box style={commonStyle.appScreen}>
       <HStack style={account_detailsScreen.hstack}>
@@ -16,15 +38,9 @@ export function AccountDetails({ navigation }: any) {
         </Box>
         <Text style={account_detailsScreen.title}>Account Details</Text>
       </HStack>
-      <Box
-        style={account_detailsScreen.image_box}
-        onTouchEnd={() => navigation.navigate('LoginScreen')}>
+      <Box style={account_detailsScreen.image_box} onTouchEnd={pickImage}>
         <Center>
-          <Image
-            alt="Camera"
-            source={require('../../Images/camera.png')}
-            style={account_detailsScreen.image}
-          />
+          <Image alt="Camera" source={image} style={pictureStyle} />
         </Center>
       </Box>
       <Box style={account_detailsScreen.content_box}>

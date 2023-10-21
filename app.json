@@ -36,6 +36,15 @@
     "updates": {
       "url": "https://u.expo.dev/9af452a1-df9f-4c14-8740-6dd6994eef87"
     },
-    "owner": "wesole_jagodki"
+    "owner": "wesole_jagodki",
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Please grant permissions for accessing photos for this app.",
+          "cameraPermission": "Please grant camera permissions for this app."
+        }
+      ]
+    ]
   }
 }
