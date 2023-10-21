@@ -32,7 +32,11 @@ export function WelcomeScreen({ navigation }: any) {
   });
 
   return (
-    <Box style={commonStyle.appScreen}>
+    <Box
+      style={commonStyle.appScreen}
+      onTouchEnd={() => {
+        navigation.navigate('TutorialScreen1');
+      }}>
       <Animated.View style={[welcomeScreen.container, { opacity: opacityModifier }]}>
         <Image
           alt="applogo"
