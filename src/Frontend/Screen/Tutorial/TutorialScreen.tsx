@@ -81,7 +81,7 @@ export const Tutorial3 = ({ navigation }: any) => {
                 earn exciting rewards and points. Exchange them for vouchers,
                 discounts, and more. Saving was never this rewarding!"
       nextButtonText="Let's Start"
-      nextNavigationTarget="RegistrationScreen"
+      nextNavigationTarget="LoginScreen"
     />
   );
 };

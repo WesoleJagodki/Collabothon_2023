@@ -1,7 +1,6 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { commonStyle } from '../Screen/CommonStyle';
-
 import { Test } from '../Screen/Test';
 
 const Tab = createBottomTabNavigator();

@@ -1,10 +1,12 @@
 import { Dimensions, StyleSheet } from 'react-native';
 const screen_width = Dimensions.get('window').width;
 
-export const registrationScreen = StyleSheet.create({
-  arrow: {
+export const account_detailsScreen = StyleSheet.create({
+  hstack: {
     top: -screen_width * 0.15,
-    left: -screen_width * 0.5 + 32,
+    left: -screen_width * 0.24 + 32,
+  },
+  arrow: {
     width: screen_width * 0.082,
     height: screen_width * 0.07,
   },
@@ -15,6 +17,14 @@ export const registrationScreen = StyleSheet.create({
     justifyContent: 'center',
     borderRadius: 35,
     marginBottom: 13.6,
+  },
+  title: {
+    color: 'white',
+    fontSize: 24,
+    fontFamily: 'ws-regular',
+    fontWeight: '700',
+    wordWrap: 'break-word',
+    marginLeft: 20,
   },
   image: {
     width: screen_width * 0.082,

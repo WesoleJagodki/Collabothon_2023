@@ -1,4 +1,5 @@
 import { Dimensions, StyleSheet } from 'react-native';
+
 import { textStyles } from '../../TextStyle';
 const screen_width = Dimensions.get('window').width;
 
