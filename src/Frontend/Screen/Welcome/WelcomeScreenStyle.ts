@@ -12,7 +12,7 @@ export const welcomeScreen = StyleSheet.create({
   appName: {
     color: '#14C07F',
     fontSize: 24,
-    fontFamily: "ws-bold",
+    fontFamily: 'ws-bold',
     fontWeight: '700',
     wordWrap: 'nowrap',
     textShadowRadius: 4,

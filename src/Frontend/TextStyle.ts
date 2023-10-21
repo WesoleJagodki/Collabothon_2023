@@ -70,5 +70,5 @@ export const textStyles = StyleSheet.create({
     fontSize: 16,
     fontStyle: 'normal',
     fontWeight: '700',
-  }
+  },
 });

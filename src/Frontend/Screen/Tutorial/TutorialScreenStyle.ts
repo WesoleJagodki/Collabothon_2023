@@ -5,24 +5,24 @@ const screen_width = Dimensions.get('window').width;
 export const tutorialScreen = StyleSheet.create({
   skipButton: {
     ...textStyles.small,
-    position: "absolute",
+    position: 'absolute',
     top: 20,
-    right: 20
+    right: 20,
   },
   tutorialImage1: {
     width: screen_width * 0.73,
-    height: screen_width * 0.60,
-    textAlign: 'center'
+    height: screen_width * 0.6,
+    textAlign: 'center',
   },
   tutorialImage2: {
     width: screen_width * 0.85,
     height: screen_width * 0.88,
-    textAlign: 'center'
+    textAlign: 'center',
   },
   tutorialImage3: {
     width: screen_width * 0.85,
     height: screen_width * 0.86,
-    textAlign: 'center'
+    textAlign: 'center',
   },
   tutorialHeading: {
     fontSize: 24,
@@ -31,7 +31,7 @@ export const tutorialScreen = StyleSheet.create({
     color: 'white',
     margin: 10,
     paddingTop: 2,
-    textAlign: 'center'
+    textAlign: 'center',
   },
   tutorialDesc: {
     fontSize: 14,
@@ -45,6 +45,6 @@ export const tutorialScreen = StyleSheet.create({
     bottom: 50,
     width: screen_width * 0.8,
     height: 56,
-    ...textStyles.buttonText
-  }
+    ...textStyles.buttonText,
+  },
 });

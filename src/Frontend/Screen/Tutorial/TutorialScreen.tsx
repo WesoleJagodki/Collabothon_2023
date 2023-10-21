@@ -40,7 +40,7 @@ export function TutorialScreen({
   );
 }
 
-export const Tutorial1 = ({ navigation }) => {
+export const Tutorial1 = ({ navigation }: any) => {
   return (
     <TutorialScreen
       navigation={navigation}
@@ -56,7 +56,7 @@ export const Tutorial1 = ({ navigation }) => {
   );
 };
 
-export const Tutorial2 = ({ navigation }) => {
+export const Tutorial2 = ({ navigation }: any) => {
   return (
     <TutorialScreen
       navigation={navigation}
@@ -73,7 +73,7 @@ export const Tutorial2 = ({ navigation }) => {
   );
 };
 
-export const Tutorial3 = ({ navigation }) => {
+export const Tutorial3 = ({ navigation }: any) => {
   return (
     <TutorialScreen
       navigation={navigation}
