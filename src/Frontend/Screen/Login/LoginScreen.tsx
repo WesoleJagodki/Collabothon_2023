@@ -6,7 +6,7 @@ export function LoginScreen({ navigation }: any) {
   return (
     <Box style={commonStyle.appScreen}>
       <Text>Login Page</Text>
-      <Button onPress={() => navigation.navigate('Root')}>
+      <Button onPress={() => navigation.navigate('RegistrationScreen')}>
         <ButtonText>Click here</ButtonText>
       </Button>
     </Box>

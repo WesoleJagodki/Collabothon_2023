@@ -3,7 +3,6 @@ import React, { useEffect } from 'react';
 import Animated, { Easing, useSharedValue, withTiming } from 'react-native-reanimated';
 
 import { welcomeScreen } from './WelcomeScreenStyle';
-import AppLogo from '../../Images/app_logo_savequest.png';
 import { commonStyle } from '../CommonStyle';
 
 const PRE_DELAY_MS = 500;
@@ -32,7 +31,12 @@ export function WelcomeScreen({ navigation }: any) {
   return (
     <Box style={commonStyle.appScreen}>
       <Animated.View style={[welcomeScreen.container, { opacity: opacityModifier }]}>
-        <Image alt="applogo" size="full" source={AppLogo} style={welcomeScreen.appLogo} />
+        <Image
+          alt="applogo"
+          size="full"
+          source={require('../../Images/app_logo_savequest.png')}
+          style={welcomeScreen.appLogo}
+        />
         <Text style={welcomeScreen.appName}>SaveQuest</Text>
       </Animated.View>
     </Box>

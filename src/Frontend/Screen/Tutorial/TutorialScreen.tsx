@@ -3,10 +3,6 @@ import { Text, Box, Image, Button, ButtonText } from '@gluestack-ui/themed';
 import { tutorialScreen } from './TutorialScreenStyle';
 import { commonStyle } from '../CommonStyle';
 
-import PiggyImage from '../../Images/piggy_bank_coins.png';
-import PiggyGirlImage from '../../Images/piggy_girl_coin.png';
-import PiggyGirlCalendarImage from '../../Images/piggy_girl_calendar_coin.png';
-
 export function TutorialScreen({
   navigation,
   imageSource,
@@ -44,7 +40,7 @@ export const Tutorial1 = ({ navigation }: any) => {
   return (
     <TutorialScreen
       navigation={navigation}
-      imageSource={PiggyImage}
+      imageSource={require('../../Images/piggy_bank_coins.png')}
       imageStyle={tutorialScreen.tutorialImage1}
       imageAlt="PiggyImage"
       heading="Welcome to SaveQuest!"
@@ -60,7 +56,7 @@ export const Tutorial2 = ({ navigation }: any) => {
   return (
     <TutorialScreen
       navigation={navigation}
-      imageSource={PiggyGirlImage}
+      imageSource={require('../../Images/piggy_girl_coin.png')}
       imageStyle={tutorialScreen.tutorialImage2}
       imageAlt="PiggyGirlImage"
       heading="Set Your Goals, Start Your Quests!"
@@ -77,7 +73,7 @@ export const Tutorial3 = ({ navigation }: any) => {
   return (
     <TutorialScreen
       navigation={navigation}
-      imageSource={PiggyGirlCalendarImage}
+      imageSource={require('../../Images/piggy_girl_calendar_coin.png')}
       imageStyle={tutorialScreen.tutorialImage3}
       imageAlt="PiggyGirlCalendarImage"
       heading="Earn Rewards, Boost Your Savings!"
@@ -85,7 +81,7 @@ export const Tutorial3 = ({ navigation }: any) => {
                 earn exciting rewards and points. Exchange them for vouchers,
                 discounts, and more. Saving was never this rewarding!"
       nextButtonText="Let's Start"
-      nextNavigationTarget="LoginScreen"
+      nextNavigationTarget="RegistrationScreen"
     />
   );
 };
