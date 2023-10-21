@@ -36,10 +36,10 @@ export const account_detailsScreen = StyleSheet.create({
     height: 100,
     borderRadius: 50,
     borderWidth: 1,
-    borderColor: '#696969'
+    borderColor: '#696969',
   },
   content_box: {
-    width: screen_width * 0.8,
+    width: screen_width * 0.9,
   },
   text: {
     color: '#A6AFBD',
