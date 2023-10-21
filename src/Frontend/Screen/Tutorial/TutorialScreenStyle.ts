@@ -10,21 +10,24 @@ export const tutorialScreen = StyleSheet.create({
     right: 20
   },
   tutorialImage: {
-    width: screen_width * 0.8,
-    height: screen_width * 0.655,
+    width: screen_width * 0.85,
+    height: screen_width * 0.85,
     textAlign: 'center'
   },
   tutorialHeading: {
     fontSize: 24,
+    fontFamily: 'ws-bold',
     fontWeight: 'bold',
     color: 'white',
     margin: 10,
+    paddingTop: 2,
   },
   tutorialDesc: {
     fontSize: 14,
     color: '#CAD1DB',
     textAlign: 'center',
     width: screen_width * 0.9,
+    fontFamily: 'ws-regular',
   },
   buttonNext: {
     position: 'absolute',

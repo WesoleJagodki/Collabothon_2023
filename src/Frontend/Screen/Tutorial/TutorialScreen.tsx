@@ -3,7 +3,7 @@ import { Text, Box, Image, Button, ButtonText } from '@gluestack-ui/themed';
 import { tutorialScreen } from './TutorialScreenStyle';
 import { commonStyle } from '../CommonStyle';
 
-import PiggyImage from '../../Images/piggy_bank_coins.svg';
+import PiggyImage from '../../Images/piggy_bank_coins.png';
 import PiggyGirlImage from '../../Images/piggy_girl_coin.png';
 import PiggyGirlCalendarImage from '../../Images/piggy_girl_calendar_coin.png';
 

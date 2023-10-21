@@ -12,15 +12,6 @@ export function LoginScreen({ navigation }: any) {
       <Button onPress={() => navigation.navigate('Root')}>
         <Text>Click here</Text>
       </Button>
-      <Button onPress={() => GetUser()}>
-        <Text>Get DB data</Text>
-      </Button>
-      <Button onPress={() => PostUser()}>
-        <Text>Post DB data</Text>
-      </Button>
-      <Button onPress={() => PutUser(3)}>
-        <Text>Put DB data</Text>
-      </Button>
     </Box>
   );
 }

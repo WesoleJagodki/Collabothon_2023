@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import Animated, { Easing, useSharedValue, withTiming } from 'react-native-reanimated';
 
 import { welcomeScreen } from './WelcomeScreenStyle';
-import AppLogo from '../../Images/app_logo_savequest.svg';
+import AppLogo from '../../Images/app_logo_savequest.png';
 import { commonStyle } from '../CommonStyle';
 
 const PRE_DELAY_MS = 500;
