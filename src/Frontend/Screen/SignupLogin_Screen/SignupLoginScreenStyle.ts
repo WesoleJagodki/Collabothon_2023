@@ -17,7 +17,7 @@ export const signuploginScreen = StyleSheet.create({
     fontSize: 64,
     color: '#14C07F',
     fontStyle: 'normal',
-    fontWeight: 700,
+    fontWeight: '700',
     letterSpacing: -1.28,
     fontFamily: 'ws-regular',
     paddingTop: 40,

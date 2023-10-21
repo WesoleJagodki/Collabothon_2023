@@ -16,3 +16,18 @@ export const PostUser = () => {
       console.log('Post Data to DB: ' + JSON.stringify(response.data));
     });
 };
+
+export const PostSimpleUser = ({ email, password }: any) => {
+  axios
+    .post(`${baseUrl_User}`, {
+      first_name: 'Example',
+      last_name: 'Example',
+      email: email as string,
+      password: password as string,
+      date_of_birth: 'Example',
+      sex: 'Example',
+    })
+    .then((response) => {
+      console.log('Create user: ' + JSON.stringify(response.data));
+    });
+};
