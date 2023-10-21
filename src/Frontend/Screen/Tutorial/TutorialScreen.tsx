@@ -10,6 +10,8 @@ import PiggyGirlCalendarImage from '../../Images/piggy_girl_calendar_coin.png';
 export function TutorialScreen({
   navigation,
   imageSource,
+  imageStyle,
+  imageAlt,
   heading,
   description,
   nextButtonText,
@@ -24,7 +26,7 @@ export function TutorialScreen({
         }}>
         Skip
       </Text>
-      <Image alt="piggy" source={imageSource} style={tutorialScreen.tutorialImage} />
+      <Image alt={imageAlt} source={imageSource} style={imageStyle} />
       <Text style={tutorialScreen.tutorialHeading}>{heading}</Text>
       <Text style={tutorialScreen.tutorialDesc}>{description}</Text>
       <Button
@@ -43,6 +45,8 @@ export const Tutorial1 = ({ navigation }) => {
     <TutorialScreen
       navigation={navigation}
       imageSource={PiggyImage}
+      imageStyle={tutorialScreen.tutorialImage1}
+      imageAlt="PiggyImage"
       heading="Welcome to SaveQuest!"
       description="Dive into a world where saving isn't just smart, it's an adventure.
         Begin your journey towards financial freedom with fun challenges and quests."
@@ -57,6 +61,8 @@ export const Tutorial2 = ({ navigation }) => {
     <TutorialScreen
       navigation={navigation}
       imageSource={PiggyGirlImage}
+      imageStyle={tutorialScreen.tutorialImage2}
+      imageAlt="PiggyGirlImage"
       heading="Set Your Goals, Start Your Quests!"
       description="Whether it's a dream vacation or a new gadget,
                 set your savings goals and embark on quests tailored to help
@@ -72,6 +78,8 @@ export const Tutorial3 = ({ navigation }) => {
     <TutorialScreen
       navigation={navigation}
       imageSource={PiggyGirlCalendarImage}
+      imageStyle={tutorialScreen.tutorialImage3}
+      imageAlt="PiggyGirlCalendarImage"
       heading="Earn Rewards, Boost Your Savings!"
       description="As you conquer quests and hit milestones,
                 earn exciting rewards and points. Exchange them for vouchers,

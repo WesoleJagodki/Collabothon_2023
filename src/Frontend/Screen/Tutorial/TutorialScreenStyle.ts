@@ -9,9 +9,19 @@ export const tutorialScreen = StyleSheet.create({
     top: 20,
     right: 20
   },
-  tutorialImage: {
+  tutorialImage1: {
+    width: screen_width * 0.73,
+    height: screen_width * 0.60,
+    textAlign: 'center'
+  },
+  tutorialImage2: {
     width: screen_width * 0.85,
-    height: screen_width * 0.85,
+    height: screen_width * 0.88,
+    textAlign: 'center'
+  },
+  tutorialImage3: {
+    width: screen_width * 0.85,
+    height: screen_width * 0.86,
     textAlign: 'center'
   },
   tutorialHeading: {
@@ -21,6 +31,7 @@ export const tutorialScreen = StyleSheet.create({
     color: 'white',
     margin: 10,
     paddingTop: 2,
+    textAlign: 'center'
   },
   tutorialDesc: {
     fontSize: 14,
