@@ -62,6 +62,7 @@ export function CreateNewAccountScreen({ navigation }: any) {
     ) {
       if (passwordString === confirmPasswordString) {
         PostSimpleUser();
+        navigation.navigate('RootTab');
       }
     } else {
       console.log("Create New User Error");
