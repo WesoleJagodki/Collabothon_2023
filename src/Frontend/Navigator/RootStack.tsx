@@ -6,6 +6,7 @@ import { CreateNewAccountScreen } from '../Screen/CreateNewAccount/CreateNewAcco
 import { AccountDetails } from '../Screen/AccountDetails/AccountDetails';
 import { Tutorial1, Tutorial2, Tutorial3 } from '../Screen/Tutorial/TutorialScreen';
 import { WelcomeScreen } from '../Screen/Welcome/WelcomeScreen';
+import {SignupLoginScreen} from "../Screen/SignupLogin_Screen/SignupLoginScreen";
 
 const Stack = createStackNavigator();
 
@@ -21,6 +22,7 @@ export function RootStack() {
         component={CreateNewAccountScreen}
         options={{ title: 'Create New Account' }}
       />
+        <Stack.Screen name="SignupLoginScreen" component={SignupLoginScreen} options={{ title: 'Signup/Login' }} />
       <Stack.Screen name="LoginScreen" component={LoginScreen} options={{ title: 'Login' }} />
       <Stack.Screen
         name="AccountDetailsScreen"

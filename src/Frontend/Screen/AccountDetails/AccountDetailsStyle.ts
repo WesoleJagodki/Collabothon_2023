@@ -15,7 +15,7 @@ export const account_detailsScreen = StyleSheet.create({
     height: 100,
     backgroundColor: '#F6F6F6',
     justifyContent: 'center',
-    borderRadius: 35,
+    borderRadius: 50,
     marginBottom: 13.6,
   },
   title: {
@@ -30,6 +30,13 @@ export const account_detailsScreen = StyleSheet.create({
   image: {
     width: screen_width * 0.082,
     height: screen_width * 0.07,
+  },
+  pickedPicture: {
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+    borderWidth: 1,
+    borderColor: '#696969'
   },
   content_box: {
     width: screen_width * 0.9,

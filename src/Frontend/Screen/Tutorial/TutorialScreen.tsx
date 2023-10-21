@@ -87,6 +87,7 @@ export const Tutorial3 = ({ navigation }: any) => {
                 discounts, and more. Saving was never this rewarding!"
       nextButtonText="Let's Start"
       nextNavigationTarget="LoginScreen"
+      nextNavigationTarget="SignupLoginScreen"
     />
   );
 };
