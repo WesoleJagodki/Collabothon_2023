@@ -9,13 +9,14 @@ import {
   Image,
   InputSlot,
   InputIcon,
-  EyeIcon, EyeOffIcon
+  EyeIcon,
+  EyeOffIcon,
 } from '@gluestack-ui/themed';
 import axios from 'axios';
 
 import { loginScreen } from './LoginScreenStyle';
 import { commonStyle } from '../CommonStyle';
-import React from "react";
+import React from 'react';
 
 export function LoginScreen({ navigation }: any) {
   const [emailString, setEmailString] = React.useState('');
@@ -36,40 +37,40 @@ export function LoginScreen({ navigation }: any) {
 
   const GetPassword = () => {
     axios
-        .get(`${baseUrl_Password}`, {
-          headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'GET',
-          },
-        })
-        .then((response) => {
-          console.log('Get DB data: ' + JSON.parse(JSON.stringify(response.data[0])).password);
-          if (JSON.parse(JSON.stringify(response.data[0])).password === passwordString) {
-            navigation.navigate('AccountDetailsScreen');
-          }
-        });
+      .get(`${baseUrl_Password}`, {
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'GET',
+        },
+      })
+      .then((response) => {
+        console.log('Get DB data: ' + JSON.parse(JSON.stringify(response.data[0])).password);
+        if (JSON.parse(JSON.stringify(response.data[0])).password === passwordString) {
+          navigation.navigate('AccountDetailsScreen');
+        }
+      });
   };
 
   const GetEmail = () => {
     axios
-        .get(`${baseUrl_Email}`, {
-          headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'GET',
-          },
-        })
-        .then((response) => {
-          console.log('Get DB data: ' +  JSON.parse(JSON.stringify(response.data[0])).user_id);
-          setDBID(JSON.parse(JSON.stringify(response.data[0])).user_id);
-          GetPassword();
-        });
+      .get(`${baseUrl_Email}`, {
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'GET',
+        },
+      })
+      .then((response) => {
+        console.log('Get DB data: ' + JSON.parse(JSON.stringify(response.data[0])).user_id);
+        setDBID(JSON.parse(JSON.stringify(response.data[0])).user_id);
+        GetPassword();
+      });
   };
 
   const LogIn = async () => {
-      if (emailString !== '') {
-        GetEmail();
-      }
-  }
+    if (emailString !== '') {
+      GetEmail();
+    }
+  };
 
   return (
     <Box style={commonStyle.appScreen}>
@@ -80,22 +81,28 @@ export function LoginScreen({ navigation }: any) {
         </Center>
         <Text style={loginScreen.text}>Email</Text>
         <Input style={loginScreen.input}>
-          <InputField style={loginScreen.input_text} placeholder="Enter email" onChangeText={setEmailString}/>
+          <InputField
+            style={loginScreen.input_text}
+            placeholder="Enter email"
+            onChangeText={setEmailString}
+          />
         </Input>
         <Text style={loginScreen.text}>Password</Text>
         <Input style={loginScreen.input}>
-          <InputField style={loginScreen.input_text} placeholder="Enter password" type={showPassword ? 'text' : 'password'}
-                      onChangeText={setPasswordString} />
+          <InputField
+            style={loginScreen.input_text}
+            placeholder="Enter password"
+            type={showPassword ? 'text' : 'password'}
+            onChangeText={setPasswordString}
+          />
           <InputSlot pr="$3" onPress={handleState}>
-              <InputIcon as={showPassword ? EyeIcon : EyeOffIcon} color="#CAD1DB" />
+            <InputIcon as={showPassword ? EyeIcon : EyeOffIcon} color="#CAD1DB" />
           </InputSlot>
         </Input>
         <Text style={loginScreen.text2} onPress={() => navigation.navigate('AccountDetailsScreen')}>
           Forgot Password?
         </Text>
-        <Button
-          style={loginScreen.button}
-          onPress={() => LogIn()}>
+        <Button style={loginScreen.button} onPress={() => LogIn()}>
           <Text style={loginScreen.button_text}>LOG IN</Text>
         </Button>
         <Center>

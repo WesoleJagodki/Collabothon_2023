@@ -14,4 +14,3 @@ export const GetUser = () => {
       console.log('Get DB data: ' + JSON.stringify(response.data));
     });
 };
-

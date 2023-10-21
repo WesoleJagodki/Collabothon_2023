@@ -3,10 +3,10 @@ import { Dimensions, StyleSheet } from 'react-native';
 const screen_width = Dimensions.get('window').width;
 
 export const signuploginScreen = StyleSheet.create({
-    loginImage: {
-        height: screen_width*0.6,
-        width: screen_width*0.9,
-    },
+  loginImage: {
+    height: screen_width * 0.6,
+    width: screen_width * 0.9,
+  },
 
   loginText1: {
     fontSize: 64,
@@ -35,11 +35,10 @@ export const signuploginScreen = StyleSheet.create({
     marginBottom: 40,
   },
 
-    button2: {
-        width: screen_width * 0.8,
-        height: 56,
-        backgroundColor: '#028760',
-        marginBottom: 96,
-    }
+  button2: {
+    width: screen_width * 0.8,
+    height: 56,
+    backgroundColor: '#028760',
+    marginBottom: 96,
+  },
 });
-

@@ -56,18 +56,18 @@ export function CreateNewAccountScreen({ navigation }: any) {
 
   const GetUser = () => {
     axios
-        .get(`${baseUrl_User}`, {
-          headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'GET',
-          },
-        })
-        .then((response) => {
-          console.log('Get DB data: ' + JSON.stringify(response.data));
-          if (response.data !== '' && response.data !== undefined) {
-            setDBConnection(true);
-          }
-        });
+      .get(`${baseUrl_User}`, {
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'GET',
+        },
+      })
+      .then((response) => {
+        console.log('Get DB data: ' + JSON.stringify(response.data));
+        if (response.data !== '' && response.data !== undefined) {
+          setDBConnection(true);
+        }
+      });
   };
 
   const CreateNewUser = () => {
@@ -80,12 +80,12 @@ export function CreateNewAccountScreen({ navigation }: any) {
       if (passwordString === confirmPasswordString) {
         PostSimpleUser();
         GetUser();
-        if(DBConnection === true) {
+        if (DBConnection === true) {
           navigation.navigate('LoginScreen');
         }
       }
     } else {
-      console.log("Create New User Error");
+      console.log('Create New User Error');
     }
   };
 
