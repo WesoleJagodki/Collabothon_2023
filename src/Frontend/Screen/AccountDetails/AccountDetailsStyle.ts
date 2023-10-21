@@ -32,7 +32,7 @@ export const account_detailsScreen = StyleSheet.create({
     height: screen_width * 0.07,
   },
   content_box: {
-    width: screen_width * 0.8,
+    width: screen_width * 0.9,
   },
   text: {
     color: '#A6AFBD',

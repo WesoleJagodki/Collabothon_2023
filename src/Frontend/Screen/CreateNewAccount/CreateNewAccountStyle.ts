@@ -1,17 +1,17 @@
 import { Dimensions, StyleSheet } from 'react-native';
 const screen_width = Dimensions.get('window').width;
 
-export const loginScreen = StyleSheet.create({
+export const create_new_accountScreen = StyleSheet.create({
   content_box: {
     width: screen_width * 0.9,
   },
   title: {
     color: 'white',
-    fontSize: 40,
+    fontSize: 34,
     fontFamily: 'ws-bold',
     fontWeight: '700',
     wordWrap: 'break-word',
-    paddingTop: 20,
+    paddingTop: 15,
   },
   subtitle: {
     color: 'white',
@@ -20,8 +20,9 @@ export const loginScreen = StyleSheet.create({
     fontWeight: '500',
     lineHeight: 22.4,
     wordWrap: 'break-word',
-    marginBottom: 40,
-    marginTop: 9,
+    marginBottom: 24,
+    marginTop: 6,
+    textAlign: 'center',
   },
   text: {
     color: '#A6AFBD',
@@ -67,10 +68,9 @@ export const loginScreen = StyleSheet.create({
     color: '#A6AFBD',
     fontSize: 14,
     fontFamily: 'ws-regular',
-    fontWeight: '600',
-    lineHeight: 21,
+    fontWeight: '500',
+    lineHeight: 19.6,
     wordWrap: 'break-word',
-    textAlign: 'right',
   },
   text3: {
     color: 'white',
@@ -88,7 +88,7 @@ export const loginScreen = StyleSheet.create({
     wordWrap: 'break-word',
   },
   image: {
-    height: screen_width * 0.4,
+    height: screen_width * 0.3,
     width: screen_width * 0.7,
     marginTop: 50,
   },

@@ -8,8 +8,8 @@ export const tutorialScreen = StyleSheet.create({
   skipButton: {
     ...textStyles.small,
     position: 'absolute',
-    top: screen_width*0.1,
-    right: screen_width*0.08,
+    top: screen_width * 0.1,
+    right: screen_width * 0.08,
   },
   tutorialImage1: {
     width: screen_width * 0.73,

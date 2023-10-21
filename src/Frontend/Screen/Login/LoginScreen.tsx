@@ -32,7 +32,7 @@ export function LoginScreen({ navigation }: any) {
             <Text style={loginScreen.text3}>Not a member?</Text>
             <Text
               style={loginScreen.text4}
-              onPress={() => navigation.navigate('AccountDetailsScreen')}>
+              onPress={() => navigation.navigate('CreateNewAccountScreen')}>
               Register now
             </Text>
           </HStack>
