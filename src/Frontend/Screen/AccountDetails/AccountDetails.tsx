@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 
 import { account_detailsScreen } from './AccountDetailsStyle';
 import { commonStyle } from '../CommonStyle';
-import axios from "axios";
+import axios from 'axios';
 
 export function AccountDetails({ navigation }: any) {
   const [image, setImage] = useState<string>(require('../../Images/camera.png'));
@@ -17,25 +17,25 @@ export function AccountDetails({ navigation }: any) {
 
   const PutUser = (user_id: number) => {
     axios
-        .put(`${baseUrl_User}`, {
-          user_id: user_id as number,
-          first_name: firstName,
-          last_name: lastName,
-          date_of_birth: dateOfBirth,
-          sex: sex,
-        })
-        .catch((error) => {
-          alert('An error has occurred');
-          console.log(error);
-        })
-        .then((response) => {
-          navigation.navigate('LoginScreen');
-        });
+      .put(`${baseUrl_User}`, {
+        user_id: user_id as number,
+        first_name: firstName,
+        last_name: lastName,
+        date_of_birth: dateOfBirth,
+        sex: sex,
+      })
+      .catch((error) => {
+        alert('An error has occurred');
+        console.log(error);
+      })
+      .then((response) => {
+        navigation.navigate('LoginScreen');
+      });
   };
 
   const ChangeAccountDetail = () => {
     PutUser(7);
-  }
+  };
 
   ImagePicker.useMediaLibraryPermissions();
   ImagePicker.useCameraPermissions();
@@ -76,27 +76,41 @@ export function AccountDetails({ navigation }: any) {
       <Box style={account_detailsScreen.content_box}>
         <Text style={account_detailsScreen.text}>Name</Text>
         <Input style={account_detailsScreen.input}>
-          <InputField style={account_detailsScreen.input_text} placeholder="Enter name" onChangeText={setFirstName}/>
+          <InputField
+            style={account_detailsScreen.input_text}
+            placeholder="Enter name"
+            onChangeText={setFirstName}
+          />
         </Input>
         <Text style={account_detailsScreen.text}>Surname</Text>
         <Input style={account_detailsScreen.input}>
-          <InputField style={account_detailsScreen.input_text} placeholder="Enter surname" onChangeText={setLastName}/>
+          <InputField
+            style={account_detailsScreen.input_text}
+            placeholder="Enter surname"
+            onChangeText={setLastName}
+          />
         </Input>
         <Text style={account_detailsScreen.text}>Birth Date</Text>
         <Input style={account_detailsScreen.input}>
-          <InputField style={account_detailsScreen.input_text} placeholder="Enter birth date" onChangeText={setDateOfBirth}/>
+          <InputField
+            style={account_detailsScreen.input_text}
+            placeholder="Enter birth date"
+            onChangeText={setDateOfBirth}
+          />
         </Input>
         <Text style={account_detailsScreen.text}>Gender</Text>
         <Input style={account_detailsScreen.input}>
-          <InputField style={account_detailsScreen.input_text} placeholder="Enter gender" onChangeText={setSex}/>
+          <InputField
+            style={account_detailsScreen.input_text}
+            placeholder="Enter gender"
+            onChangeText={setSex}
+          />
         </Input>
         <Text style={account_detailsScreen.text}>Country</Text>
         <Input style={account_detailsScreen.input}>
           <InputField style={account_detailsScreen.input_text} placeholder="Enter country" />
         </Input>
-        <Button
-          style={account_detailsScreen.button}
-          onPress={() => ChangeAccountDetail()}>
+        <Button style={account_detailsScreen.button} onPress={() => ChangeAccountDetail()}>
           <Text style={account_detailsScreen.button_text}>CHOOSE PREFERENCES</Text>
         </Button>
       </Box>
