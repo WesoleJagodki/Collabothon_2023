@@ -2,7 +2,7 @@ import { Box, Image, Text } from '@gluestack-ui/themed';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { rootTab } from './RootTabStyle';
-import { Dashboard } from '../Screen/Test';
+import { Dashboard } from '../Screen/Dashboard';
 
 const Tab = createBottomTabNavigator();
 

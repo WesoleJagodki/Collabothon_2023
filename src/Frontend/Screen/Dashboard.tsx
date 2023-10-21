@@ -5,7 +5,16 @@ import { commonStyle } from './CommonStyle';
 import { LineChart } from 'react-native-chart-kit';
 import { Dimensions } from 'react-native';
 
-const MonthlySpendingsGraph = () => {
+// legend: ['This month', 'Last month', 'Spending goal'],
+
+type Props = {
+  month: number;
+  thisMonth: { dayOfMonth: string; spending: number }[];
+  lastMonth: { dayOfMonth: string; spending: number }[];
+  spendingGoal: number;
+};
+
+const MonthlySpendingsGraph = ({ month, thisMonth, lastMonth, spendingGoal }: Props) => {
   return (
     <LineChart
       data={{
@@ -48,7 +57,6 @@ const MonthlySpendingsGraph = () => {
             ],
           },
         ],
-        legend: ['This month', 'Last month', 'Spending goal'],
       }}
       width={Dimensions.get('window').width * 0.9} // from react-native
       height={180}
