@@ -14,8 +14,8 @@ import {
 } from '@gluestack-ui/themed';
 import React from 'react';
 
-import { commonStyle } from '../CommonStyle';
 import { create_new_accountScreen } from './CreateNewAccountStyle';
+import { commonStyle } from '../CommonStyle';
 
 export function CreateNewAccountScreen({ navigation }: any) {
   const [checkboxValue, setCheckboxValue] = React.useState(false);
@@ -42,7 +42,11 @@ export function CreateNewAccountScreen({ navigation }: any) {
           <InputField style={create_new_accountScreen.input_text} placeholder="Enter password" />
         </Input>
         <HStack>
-          <Checkbox size="md" onChange={setCheckboxValue} isChecked={checkboxValue}>
+          <Checkbox
+            value="termsOfService"
+            size="md"
+            onChange={setCheckboxValue}
+            isChecked={checkboxValue}>
             <CheckboxIndicator mr="$2">
               <CheckboxIcon as={CheckIcon} />
             </CheckboxIndicator>

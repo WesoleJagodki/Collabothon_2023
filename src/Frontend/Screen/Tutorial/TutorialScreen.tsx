@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import { Text, Box, Image, Button, ButtonText } from '@gluestack-ui/themed';
+import { useState } from 'react';
 
 import { tutorialScreen } from './TutorialScreenStyle';
 import { commonStyle } from '../CommonStyle';

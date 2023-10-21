@@ -1,5 +1,5 @@
 import { Dimensions, StyleSheet } from 'react-native';
-import { textStyles } from '../../TextStyle';
+
 const screen_width = Dimensions.get('window').width;
 
 export const signuploginScreen = StyleSheet.create({
@@ -17,8 +17,7 @@ export const signuploginScreen = StyleSheet.create({
     fontSize: 54,
     color: '#14C07F',
     fontStyle: 'normal',
-    fontWeight: 700,
-    lineHeight: 'normal',
+    fontWeight: '700',
     letterSpacing: -1.28,
     fontFamily: 'ws-bold',
     marginBottom: 16,

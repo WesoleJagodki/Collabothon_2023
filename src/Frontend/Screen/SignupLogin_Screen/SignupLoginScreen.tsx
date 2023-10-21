@@ -1,6 +1,7 @@
 import { Text, Box, Image, Button, ButtonText } from '@gluestack-ui/themed';
-import { commonStyle } from '../CommonStyle';
+
 import { signuploginScreen } from './SignupLoginScreenStyle';
+import { commonStyle } from '../CommonStyle';
 
 export function SignupLoginScreen({ navigation }: any) {
   return (

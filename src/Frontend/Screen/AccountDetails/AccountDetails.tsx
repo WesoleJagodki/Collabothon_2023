@@ -1,17 +1,16 @@
-import { useState } from 'react';
 import { Button, Text, Box, Center, Image, Input, InputField, HStack } from '@gluestack-ui/themed';
+import * as ImagePicker from 'expo-image-picker';
+import { useState } from 'react';
 
 import { account_detailsScreen } from './AccountDetailsStyle';
 import { commonStyle } from '../CommonStyle';
-
-import * as ImagePicker from 'expo-image-picker';
 
 export function AccountDetails({ navigation }: any) {
   const [image, setImage] = useState<string>(require('../../Images/camera.png'));
   const [pictureStyle, setPictureStyle] = useState(account_detailsScreen.image);
 
   const pickImage = async () => {
-    let result = await ImagePicker.launchCameraAsync({
+    const result = await ImagePicker.launchCameraAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.All,
       allowsEditing: true,
       aspect: [4, 3],
