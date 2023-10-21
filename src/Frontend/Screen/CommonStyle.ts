@@ -11,5 +11,5 @@ export const commonStyle = StyleSheet.create({
     fontFamily: 'Work Sans',
     fontWeight: '700',
     wordWrap: 'break-word',
-  },
+  }
 });

@@ -24,7 +24,7 @@ export function WelcomeScreen({ navigation }: any) {
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      navigation.navigate('TutorialScreen');
+      navigation.navigate('TutorialScreen1');
     }, PRE_DELAY_MS + ANIMATION_TIME_MS);
     return () => clearTimeout(timeout);
   });

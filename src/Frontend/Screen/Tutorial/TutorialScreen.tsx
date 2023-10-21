@@ -1,10 +1,20 @@
-import { Text, Box, Image } from '@gluestack-ui/themed';
+import { Text, Box, Image, Button, ButtonText } from '@gluestack-ui/themed';
 
 import { tutorialScreen } from './TutorialScreenStyle';
-import PiggyImage from '../../Images/piggy_bank_coins.svg';
 import { commonStyle } from '../CommonStyle';
 
-export function TutorialScreen({ navigation }: any) {
+import PiggyImage from '../../Images/piggy_bank_coins.svg';
+import PiggyGirlImage from '../../Images/piggy_girl_coin.png';
+import PiggyGirlCalendarImage from '../../Images/piggy_girl_calendar_coin.png';
+
+export function TutorialScreen({
+  navigation,
+  imageSource,
+  heading,
+  description,
+  nextButtonText,
+  nextNavigationTarget,
+}: any) {
   return (
     <Box style={commonStyle.appScreen}>
       <Text
@@ -14,12 +24,60 @@ export function TutorialScreen({ navigation }: any) {
         }}>
         Skip
       </Text>
-      <Image alt="piggy" source={PiggyImage} style={tutorialScreen.tutorialImage} />
-      <Text style={tutorialScreen.tutorialHeading}>Welcome to SaveQuest!</Text>
-      <Text style={tutorialScreen.tutorialDesc}>
-        Dive into a world where saving isn't just smart, it's an adventure. Begin your journey
-        towards financial freedom with fun challenges and quests.
-      </Text>
+      <Image alt="piggy" source={imageSource} style={tutorialScreen.tutorialImage} />
+      <Text style={tutorialScreen.tutorialHeading}>{heading}</Text>
+      <Text style={tutorialScreen.tutorialDesc}>{description}</Text>
+      <Button
+        style={tutorialScreen.buttonNext}
+        onPress={() => {
+          navigation.navigate(nextNavigationTarget);
+        }}>
+        <ButtonText>{nextButtonText}</ButtonText>
+      </Button>
     </Box>
   );
 }
+
+export const Tutorial1 = ({ navigation }) => {
+  return (
+    <TutorialScreen
+      navigation={navigation}
+      imageSource={PiggyImage}
+      heading="Welcome to SaveQuest!"
+      description="Dive into a world where saving isn't just smart, it's an adventure.
+        Begin your journey towards financial freedom with fun challenges and quests."
+      nextButtonText="Next"
+      nextNavigationTarget="TutorialScreen2"
+    />
+  );
+};
+
+export const Tutorial2 = ({ navigation }) => {
+  return (
+    <TutorialScreen
+      navigation={navigation}
+      imageSource={PiggyGirlImage}
+      heading="Set Your Goals, Start Your Quests!"
+      description="Whether it's a dream vacation or a new gadget,
+                set your savings goals and embark on quests tailored to help
+                you achieve them. Every challenge brings you closer to your aspirations."
+      nextButtonText="Next"
+      nextNavigationTarget="TutorialScreen3"
+    />
+  );
+};
+
+export const Tutorial3 = ({ navigation }) => {
+  return (
+    <TutorialScreen
+      navigation={navigation}
+      imageSource={PiggyGirlCalendarImage}
+      heading="Earn Rewards, Boost Your Savings!"
+      description="As you conquer quests and hit milestones,
+                earn exciting rewards and points. Exchange them for vouchers,
+                discounts, and more. Saving was never this rewarding!"
+      nextButtonText="Let's Start"
+      nextNavigationTarget="RootTab"
+    />
+  );
+};
