@@ -9,6 +9,9 @@ export function AccountDetails({ navigation }: any) {
   const [image, setImage] = useState<string>(require('../../Images/camera.png'));
   const [pictureStyle, setPictureStyle] = useState(account_detailsScreen.image);
 
+  ImagePicker.useMediaLibraryPermissions();
+  ImagePicker.useCameraPermissions();
+
   const pickImage = async () => {
     const result = await ImagePicker.launchCameraAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.All,

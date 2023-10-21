@@ -41,7 +41,8 @@
       [
         "expo-image-picker",
         {
-          "photosPermission": "Please grant permissions for accessing photos for this app."
+          "photosPermission": "Please grant permissions for accessing photos for this app.",
+          "cameraPermission": "Please grant camera permissions for this app."
         }
       ]
     ]
