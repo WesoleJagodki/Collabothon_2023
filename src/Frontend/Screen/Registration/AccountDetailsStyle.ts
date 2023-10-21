@@ -21,10 +21,11 @@ export const account_detailsScreen = StyleSheet.create({
   title: {
     color: 'white',
     fontSize: 24,
-    fontFamily: 'ws-regular',
+    fontFamily: 'ws-bold',
     fontWeight: '700',
     wordWrap: 'break-word',
     marginLeft: 20,
+    paddingTop: 6,
   },
   image: {
     width: screen_width * 0.082,
