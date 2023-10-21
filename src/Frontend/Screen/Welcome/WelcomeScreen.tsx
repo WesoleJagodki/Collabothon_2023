@@ -24,12 +24,19 @@ export function WelcomeScreen({ navigation }: any) {
   useEffect(() => {
     const timeout = setTimeout(() => {
       navigation.navigate('TutorialScreen1');
+      setTimeout(() => {
+        opacityModifier.value = 1.0;
+      }, 100);
     }, PRE_DELAY_MS + ANIMATION_TIME_MS);
     return () => clearTimeout(timeout);
   });
 
   return (
-    <Box style={commonStyle.appScreen}>
+    <Box
+      style={commonStyle.appScreen}
+      onTouchEnd={() => {
+        navigation.navigate('TutorialScreen1');
+      }}>
       <Animated.View style={[welcomeScreen.container, { opacity: opacityModifier }]}>
         <Image
           alt="applogo"

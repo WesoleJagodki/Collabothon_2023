@@ -1,4 +1,5 @@
 import { Text, Box, Image, Button, ButtonText } from '@gluestack-ui/themed';
+import { useState } from 'react';
 
 import { tutorialScreen } from './TutorialScreenStyle';
 import { commonStyle } from '../CommonStyle';
@@ -14,8 +15,19 @@ export function TutorialScreen({
   nextButtonText,
   nextNavigationTarget,
 }: any) {
+  const [touchX, setTouchX] = useState<number>();
+
   return (
-    <Box style={commonStyle.appScreen}>
+    <Box
+      style={commonStyle.appScreen}
+      onTouchStart={(e) => {
+        setTouchX(e.nativeEvent.pageX);
+      }}
+      onTouchEnd={(e) => {
+        if (touchX && touchX - e.nativeEvent.pageX > 20) {
+          navigation.navigate(nextNavigationTarget);
+        }
+      }}>
       <Text
         style={tutorialScreen.skipButton}
         onPress={() => {

@@ -14,6 +14,7 @@ export const textStyles = StyleSheet.create({
     fontSize: 40,
     fontStyle: 'normal',
     fontWeight: '700',
+    lineHeight: 50,
   },
   h3: {
     color: 'white',

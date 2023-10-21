@@ -1,12 +1,13 @@
 import { createStackNavigator } from '@react-navigation/stack';
 
 import { RootTab } from './RootTab';
-import { LoginScreen } from '../Screen/Login/LoginScreen';
-import { CreateNewAccountScreen } from '../Screen/CreateNewAccount/CreateNewAccount';
 import { AccountDetails } from '../Screen/AccountDetails/AccountDetails';
+import { CreateNewAccountScreen } from '../Screen/CreateNewAccount/CreateNewAccount';
+import { LoginScreen } from '../Screen/Login/LoginScreen';
+import { RegistrationFinishedScreen } from '../Screen/RegistrationFinished/RegistrationFinishedScreen';
+import { SignupLoginScreen } from '../Screen/SignupLogin_Screen/SignupLoginScreen';
 import { Tutorial1, Tutorial2, Tutorial3 } from '../Screen/Tutorial/TutorialScreen';
 import { WelcomeScreen } from '../Screen/Welcome/WelcomeScreen';
-import { SignupLoginScreen } from '../Screen/SignupLogin_Screen/SignupLoginScreen';
 
 const Stack = createStackNavigator();
 
@@ -32,6 +33,11 @@ export function RootStack() {
         name="AccountDetailsScreen"
         component={AccountDetails}
         options={{ title: 'Account Details' }}
+      />
+      <Stack.Screen
+        name="RegistrationFinishedScreen"
+        component={RegistrationFinishedScreen}
+        options={{ title: 'Registration Finished' }}
       />
       <Stack.Screen name="RootTab" component={RootTab} options={{ title: 'Home' }} />
     </Stack.Navigator>

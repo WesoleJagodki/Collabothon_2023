@@ -6,7 +6,7 @@ import { useFonts } from 'expo-font';
 import { RootStack } from './src/Frontend/Navigator/RootStack';
 
 export default function App() {
-  const [] = useFonts({
+  useFonts({
     'ws-regular': require('./assets/fonts/WorkSans-Regular.ttf'),
     'ws-bold': require('./assets/fonts/WorkSans-Bold.ttf'),
   });
