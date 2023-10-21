@@ -1,9 +1,8 @@
+import { Box, Image, Text } from '@gluestack-ui/themed';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import { commonStyle } from '../Screen/CommonStyle';
-import { Dashboard } from '../Screen/Test';
 import { rootTab } from './RootTabStyle';
-import { Box, Image, Text } from '@gluestack-ui/themed';
+import { Dashboard } from '../Screen/Test';
 
 const Tab = createBottomTabNavigator();
 
@@ -33,6 +32,12 @@ const TabLabel = ({ focused, color, position, children }: any) => {
   );
 };
 
+const IconOffers = require('../Images/PriceTag.png');
+const IconAdd = require('../Images/icon-adauga.png');
+const IconAdvices = require('../Images/icon-educatie.png');
+const IconMore = require('../Images/icon-more.png');
+const IconDashboard = require('../Images/icon_dashboard.png');
+
 export const RootTab = function () {
   return (
     <Tab.Navigator
@@ -45,7 +50,7 @@ export const RootTab = function () {
         component={Dashboard}
         options={{
           title: 'Dashboard',
-          tabBarIcon: TabIcon({ uri: require('../Images/icon_dashboard.png') }),
+          tabBarIcon: TabIcon({ uri: IconDashboard }),
           tabBarLabel: TabLabel,
         }}
       />
@@ -54,7 +59,7 @@ export const RootTab = function () {
         component={Dashboard}
         options={{
           title: 'Advices',
-          tabBarIcon: TabIcon({ uri: require('../Images/icon-educatie.png') }),
+          tabBarIcon: TabIcon({ uri: IconAdvices }),
           tabBarLabel: TabLabel,
         }}
       />
@@ -63,7 +68,7 @@ export const RootTab = function () {
         component={Dashboard}
         options={{
           title: 'Add',
-          tabBarIcon: TabIcon({ uri: require('../Images/icon-adauga.png') }),
+          tabBarIcon: TabIcon({ uri: IconAdd }),
           tabBarLabel: TabLabel,
         }}
       />
@@ -72,7 +77,7 @@ export const RootTab = function () {
         component={Dashboard}
         options={{
           title: 'Offers',
-          tabBarIcon: TabIcon({ uri: require('../Images/PriceTag.png') }),
+          tabBarIcon: TabIcon({ uri: IconOffers }),
           tabBarLabel: TabLabel,
         }}
       />
@@ -81,7 +86,7 @@ export const RootTab = function () {
         component={Dashboard}
         options={{
           title: 'More',
-          tabBarIcon: TabIcon({ uri: require('../Images/icon-more.png') }),
+          tabBarIcon: TabIcon({ uri: IconMore }),
           tabBarLabel: TabLabel,
         }}
       />

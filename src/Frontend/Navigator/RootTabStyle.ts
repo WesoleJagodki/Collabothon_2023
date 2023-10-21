@@ -3,18 +3,18 @@ import { Dimensions, StyleSheet } from 'react-native';
 
 export const rootTab = StyleSheet.create({
   contents: {
-    backgroundColor: "#081D29",
+    backgroundColor: '#081D29',
     paddingBottom: 5,
     paddingTop: 5,
-    minHeight: 60,
+    height: 80,
   },
   tabText: {
     fontSize: 12,
-    fontStyle: "normal",
+    fontStyle: 'normal',
     fontWeight: '400',
     lineHeight: 16,
     letterSpacing: 0.4,
+    marginBottom: 20,
   },
-  tabImage: {
-  }
+  tabImage: {},
 });
