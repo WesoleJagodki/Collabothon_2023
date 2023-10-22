@@ -1,9 +1,11 @@
-import { Text, Box } from '@gluestack-ui/themed';
+import {Text, Box, Badge, Image} from '@gluestack-ui/themed';
 
 import { commonStyle } from './CommonStyle';
 
 import { LineChart } from 'react-native-chart-kit';
-import { Dimensions } from 'react-native';
+import { Dimensions, View } from 'react-native';
+import {chooseInterestsScreen} from "./ChooseInterests/ChooseInterestsScreenStyle";
+import {dashboard} from "./DashboardStyles";
 
 // legend: ['This month', 'Last month', 'Spending goal'],
 
@@ -78,10 +80,52 @@ const MonthlySpendingsGraph = ({ month, thisMonth, lastMonth, spendingGoal }: Pr
   );
 };
 
+
+function SaldoBadgeDown() {
+  return (
+      <Badge shadow={4} rounded={20} style={dashboard.badge}>
+        <Box style={dashboard.badgeBox}>
+          <Text style={dashboard.saldoName}>Income</Text>
+          <View style={dashboard.saldoView}>
+            <Text style={dashboard.saldoValue}>$5632</Text>
+            <Text style={dashboard.saldoProcentDown}>-23,3%</Text>
+            <Image
+                source={require('../Images/ic_Down.png')}
+                style={dashboard.arrowDown}
+            />
+          </View>
+          <Text style={dashboard.saldoComment}>Compared to ($7340 last month)</Text>
+        </Box>
+      </Badge>
+  );
+}
+
+function SaldoBadgeUp() {
+  return (
+      <Badge shadow={4} rounded={20} style={dashboard.badge}>
+        <Box style={dashboard.badgeBox}>
+          <Text style={dashboard.saldoName}>Income</Text>
+          <View style={dashboard.saldoView}>
+            <Text style={dashboard.saldoValue}>$5632</Text>
+            <Text style={dashboard.saldoProcentUp}>-23,3%</Text>
+            <Image
+                source={require('../Images/ic_Up.png')}
+                style={dashboard.arrowUp}
+            />
+          </View>
+          <Text style={dashboard.saldoComment}>Compared to ($7340 last month)</Text>
+        </Box>
+      </Badge>
+  );
+}
+
+
 export function Dashboard({ navigation }: any) {
   return (
     <Box style={commonStyle.appScreen}>
       <MonthlySpendingsGraph />
+      <SaldoBadgeDown/>
+      <SaldoBadgeUp/>
     </Box>
   );
 }
