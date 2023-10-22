@@ -70,7 +70,7 @@ export function AccountDetails({ navigation }: any) {
       </HStack>
       <Box
         style={account_detailsScreen.image_box}
-        onTouchEnd={() => navigation.navigate('CameraScreen')}>
+        onTouchEnd={pickImage}>
         <Center>
           <Image alt="Camera" source={image} style={pictureStyle} />
         </Center>
