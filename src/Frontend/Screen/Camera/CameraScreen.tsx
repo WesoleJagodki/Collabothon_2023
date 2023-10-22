@@ -9,10 +9,11 @@ let camera: Camera
 let base64 = require('base-64');
 
 function uploadImage(image: any) {
+    console.log("Before if");
     if (!image?.uri) {
         return;
     }
-
+    console.log("After if");
     let localUri = image.uri || "";
     let filename = localUri.split("/").pop() || "";
 
@@ -21,6 +22,9 @@ function uploadImage(image: any) {
 
     formdata.append("file", image.base64);
 
+    const encodedPhoto = base64.encode("Test");
+    console.log(encodedPhoto);
+    formdata.append("file", encodedPhoto);
     let requestOptions = {
         method: "POST",
         body: formdata,
