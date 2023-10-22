@@ -37,7 +37,7 @@ export function SaldoBadgeUp() {
   );
 }
 
-export function Greeting() {
+export function Greeting({ navigation }: any) {
   return (
     <Box style={{ width: Dimensions.get('screen').width * 0.9, marginTop: 30 }}>
       <Box style={{ flex: 1, flexDirection: 'row' }}>
@@ -50,13 +50,18 @@ export function Greeting() {
             source={{ uri: require('../Images/waving_hand.png') }}
           />
         </Text>
-        <Image
-          alt="Notifications"
-          width={24}
-          height={24}
-          style={{ left: Dimensions.get('screen').width * 0.6 }}
-          source={{ uri: require('../Images/doorbell.png') }}
-        />
+        <Box
+          onTouchEnd={() => {
+            navigation.navigate('Notifications');
+          }}>
+          <Image
+            alt="Notifications"
+            width={24}
+            height={24}
+            style={{ left: Dimensions.get('screen').width * 0.6 }}
+            source={{ uri: require('../Images/doorbell.png') }}
+          />
+        </Box>
       </Box>
       <Text style={[textStyles.pretitle, { fontSize: 14 }]}>
         Every coin counts in the quest for{'\n'}financial freedom!
