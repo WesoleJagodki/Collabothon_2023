@@ -25,13 +25,13 @@ export function SaldoBadgeUp() {
   return (
     <Badge shadow={4} rounded={20} style={dashboard.badge}>
       <Box style={dashboard.badgeBox}>
-        <Text style={dashboard.saldoName}>Income</Text>
+        <Text style={dashboard.saldoName}>Expences</Text>
         <View style={dashboard.saldoView}>
-          <Text style={dashboard.saldoValue}>$5632</Text>
-          <Text style={dashboard.saldoProcentUp}>-23,3%</Text>
+          <Text style={dashboard.saldoValue}>$2789</Text>
+          <Text style={dashboard.saldoProcentUp}>-13.5%</Text>
           <Image source={require('../Images/ic_Up.png')} style={dashboard.arrowUp} />
         </View>
-        <Text style={dashboard.saldoComment}>Compared to ($7340 last month)</Text>
+        <Text style={dashboard.saldoComment}>Compared to ($3224 last month)</Text>
       </Box>
     </Badge>
   );
