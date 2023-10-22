@@ -1,3 +1,5 @@
+
+import { MonthlySpendingsGraph } from '../Components/MonthlySpendingsGraph';
 import {Text, Box, Badge, Image} from '@gluestack-ui/themed';
 
 import { commonStyle } from './CommonStyle';
@@ -8,78 +10,6 @@ import {chooseInterestsScreen} from "./ChooseInterests/ChooseInterestsScreenStyl
 import {dashboard} from "./DashboardStyles";
 
 // legend: ['This month', 'Last month', 'Spending goal'],
-
-type Props = {
-  month: number;
-  thisMonth: { dayOfMonth: string; spending: number }[];
-  lastMonth: { dayOfMonth: string; spending: number }[];
-  spendingGoal: number;
-};
-
-const MonthlySpendingsGraph = ({ month, thisMonth, lastMonth, spendingGoal }: Props) => {
-  return (
-    <LineChart
-      data={{
-        labels: ['01.09', '06.09', '12.09', '18.09', '24.09', '30.09'],
-        datasets: [
-          {
-            withDots: false,
-            color: (opacity = 1) => `rgba(106, 1, 143, 1)`,
-            data: [
-              Math.random() * 100,
-              Math.random() * 100,
-              Math.random() * 100,
-              Math.random() * 100,
-              Math.random() * 100,
-              Math.random() * 100,
-            ],
-          },
-          {
-            withDots: false,
-            color: (opacity = 1) => `rgba(162, 210, 252, 1)`,
-            data: [
-              Math.random() * 100,
-              Math.random() * 100,
-              Math.random() * 100,
-              Math.random() * 100,
-              Math.random() * 100,
-              Math.random() * 100,
-            ],
-          },
-          {
-            withDots: false,
-            color: (opacity = 1) => `rgba(0, 177, 106, 1)`,
-            data: [
-              Math.random() * 100,
-              Math.random() * 100,
-              Math.random() * 100,
-              Math.random() * 100,
-              Math.random() * 100,
-              Math.random() * 100,
-            ],
-          },
-        ],
-      }}
-      width={Dimensions.get('window').width * 0.9} // from react-native
-      height={180}
-      yAxisLabel="$"
-      chartConfig={{
-        backgroundColor: '#041C2B',
-        backgroundGradientFrom: '#041C2B',
-        backgroundGradientTo: '#041C2B',
-        decimalPlaces: 0,
-        color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-      }}
-      bezier={true}
-      style={{
-        marginVertical: 8,
-        borderRadius: 16,
-        backgroundColor: '#041C2B',
-      }}
-    />
-  );
-};
-
 
 function SaldoBadgeDown() {
   return (
@@ -121,9 +51,27 @@ function SaldoBadgeUp() {
 
 
 export function Dashboard({ navigation }: any) {
+  const thisMonth = [
+    { dayOfMonth: 1, spending: Math.random() * 100 },
+    { dayOfMonth: 2, spending: Math.random() * 100 },
+    { dayOfMonth: 3, spending: Math.random() * 100 },
+    { dayOfMonth: 4, spending: Math.random() * 100 },
+    { dayOfMonth: 5, spending: Math.random() * 100 },
+  ];
+  const lastMonth = [
+    { dayOfMonth: 1, spending: Math.random() * 100 },
+    { dayOfMonth: 2, spending: Math.random() * 100 },
+    { dayOfMonth: 3, spending: Math.random() * 100 },
+    { dayOfMonth: 4, spending: Math.random() * 100 },
+  ];
   return (
     <Box style={commonStyle.appScreen}>
-      <MonthlySpendingsGraph />
+      <MonthlySpendingsGraph
+        month={9}
+        spendingGoal={80}
+        thisMonth={thisMonth}
+        lastMonth={lastMonth}
+      />
       <SaldoBadgeDown/>
       <SaldoBadgeUp/>
     </Box>
