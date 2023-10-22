@@ -3,6 +3,7 @@ import React from 'react'
 import {Text, View, TouchableOpacity, Alert, ImageBackground} from 'react-native'
 import {Camera, CameraType} from 'expo-camera'
 import {cameraScreen} from "./CameraScreenStyle";
+import {Box} from "@gluestack-ui/themed";
 
 let camera: Camera
 let base64 = require('base-64');
@@ -88,9 +89,9 @@ export function CameraScreen() {
     }
 
     return (
-        <View style={cameraScreen.container}>
+        <Box style={cameraScreen.container}>
             {startCamera ? (
-                <View
+                <Box
                     style={{
                         flex: 1,
                         width: '100%'
@@ -107,7 +108,7 @@ export function CameraScreen() {
                                 camera = r
                             }}
                         >
-                            <View
+                            <Box
                                 style={{
                                     flex: 1,
                                     width: '100%',
@@ -115,7 +116,7 @@ export function CameraScreen() {
                                     flexDirection: 'row'
                                 }}
                             >
-                                <View
+                                <Box
                                     style={{
                                         position: 'absolute',
                                         left: '5%',
@@ -158,8 +159,8 @@ export function CameraScreen() {
                                             {cameraType === 'front' ? '🤳' : '📷'}
                                         </Text>
                                     </TouchableOpacity>
-                                </View>
-                                <View
+                                </Box>
+                                <Box
                                     style={{
                                         position: 'absolute',
                                         bottom: 0,
@@ -170,7 +171,7 @@ export function CameraScreen() {
                                         justifyContent: 'space-between'
                                     }}
                                 >
-                                    <View
+                                    <Box
                                         style={{
                                             alignSelf: 'center',
                                             flex: 1,
@@ -187,14 +188,14 @@ export function CameraScreen() {
                                                 backgroundColor: '#fff'
                                             }}
                                         />
-                                    </View>
-                                </View>
-                            </View>
+                                    </Box>
+                                </Box>
+                            </Box>
                         </Camera>
                     )}
-                </View>
+                </Box>
             ) : (
-                <View
+                <Box
                     style={{
                         flex: 1,
                         backgroundColor: '#fff',
@@ -224,18 +225,18 @@ export function CameraScreen() {
                             Take picture
                         </Text>
                     </TouchableOpacity>
-                </View>
+                </Box>
             )}
 
             <StatusBar style="auto" />
-        </View>
+        </Box>
     )
 }
 
 const CameraPreview = ({photo, retakePicture, savePhoto}: any) => {
     console.log('sdsfds', photo)
     return (
-        <View
+        <Box
             style={{
                 backgroundColor: 'transparent',
                 flex: 1,
@@ -249,7 +250,7 @@ const CameraPreview = ({photo, retakePicture, savePhoto}: any) => {
                     flex: 1
                 }}
             >
-                <View
+                <Box
                     style={{
                         flex: 1,
                         flexDirection: 'column',
@@ -257,7 +258,7 @@ const CameraPreview = ({photo, retakePicture, savePhoto}: any) => {
                         justifyContent: 'flex-end'
                     }}
                 >
-                    <View
+                    <Box
                         style={{
                             flexDirection: 'row',
                             justifyContent: 'space-between'
@@ -301,9 +302,9 @@ const CameraPreview = ({photo, retakePicture, savePhoto}: any) => {
                                 save photo
                             </Text>
                         </TouchableOpacity>
-                    </View>
-                </View>
+                    </Box>
+                </Box>
             </ImageBackground>
-        </View>
+        </Box>
     )
 }
