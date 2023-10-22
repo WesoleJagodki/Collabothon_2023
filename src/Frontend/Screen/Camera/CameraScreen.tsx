@@ -1,12 +1,14 @@
-import {StatusBar} from 'expo-status-bar'
-import React from 'react'
-import {Text, View, TouchableOpacity, Alert, ImageBackground} from 'react-native'
-import {Camera, CameraType} from 'expo-camera'
+import {StatusBar} from 'expo-status-bar';
+import React from 'react';
+import {Text, View, TouchableOpacity, Alert, ImageBackground} from 'react-native';
+import {Camera, CameraType} from 'expo-camera';
+import * as MediaLibrary from 'expo-media-library';
 import {cameraScreen} from "./CameraScreenStyle";
 import {Box} from "@gluestack-ui/themed";
 
 let camera: Camera
 let base64 = require('base-64');
+let photo;
 
 function uploadImage(image: any) {
     console.log("Before if");
@@ -22,7 +24,7 @@ function uploadImage(image: any) {
 
     formdata.append("file", image.base64);
 
-    const encodedPhoto = base64.encode("Test");
+    const encodedPhoto = base64.encode(image.uri);
     console.log(encodedPhoto);
     formdata.append("file", encodedPhoto);
     let requestOptions = {
@@ -59,18 +61,14 @@ export function CameraScreen() {
         }
     }
     const __takePicture = async () => {
-        const photo: any = await camera.takePictureAsync()
+        photo = await camera.takePictureAsync()
         console.log(photo)
         uploadImage(photo);
         setPreviewVisible(true)
         //setStartCamera(false)
         setCapturedImage(photo)
     }
-    const __savePhoto = async () => {
-        const photo: any = await camera.takePictureAsync()
-        console.log(photo)
-        uploadImage(photo);
-    }
+    const __savePhoto =  () => {}
     const __retakePicture = () => {
         setCapturedImage(null)
         setPreviewVisible(false)
