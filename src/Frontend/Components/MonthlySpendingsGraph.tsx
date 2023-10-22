@@ -60,96 +60,102 @@ export const MonthlySpendingsGraph = ({ month, thisMonth, lastMonth, spendingGoa
     <VStack
       style={{
         backgroundColor: '#041C2B',
-        alignItems: 'center',
+        borderRadius: 16,
       }}>
-      <LineChart
-        data={{
-          labels: xData,
-          datasets: [
-            {
-              withDots: false,
-              color: (opacity = 1) => thisMonthColor,
-              data: yThisMonth,
-            },
-            {
-              withDots: false,
-              color: (opacity = 1) => previousMonthColor,
-              data: yPreviousMonth,
-            },
-            {
-              withDots: false,
-              color: (opacity = 1) => goalColor,
-              data: yGoal,
-            },
-          ],
-        }}
-        width={Dimensions.get('window').width * 0.9}
-        height={180}
-        yAxisLabel="$"
-        chartConfig={{
-          backgroundColor: '#041C2B',
-          backgroundGradientFrom: '#041C2B',
-          backgroundGradientTo: '#041C2B',
-          decimalPlaces: 0,
-          color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-        }}
-        bezier={true}
+      <Text style={[textStyles.body, { margin: 20 }]}>SPENDINGS & PREDICTIONS</Text>
+      <Box
         style={{
-          marginVertical: 8,
-          borderRadius: 16,
-          backgroundColor: '#041C2B',
-        }}
-      />
-      <HStack
-        space="sm"
-        style={{
-          flex: 1,
-          borderTopWidth: 1,
-          borderTopColor: '#A6AFBD',
+          alignItems: 'center',
         }}>
-        <VStack style={monthlySpendingsGraph.legendText}>
-          <HStack space="sm">
-            <Box
-              style={[
-                monthlySpendingsGraph.legendDot,
-                {
-                  backgroundColor: thisMonthColor,
-                },
-              ]}
-            />
-            <Text style={monthlySpendingsGraph.legendLabel}>This month</Text>
-          </HStack>
-          <Text style={monthlySpendingsGraph.legendLabel}>{`\$${Math.round(thisMonthSum)}`}</Text>
-        </VStack>
-        <VStack style={monthlySpendingsGraph.legendText}>
-          <HStack space="sm">
-            <Box
-              style={[
-                monthlySpendingsGraph.legendDot,
-                {
-                  backgroundColor: previousMonthColor,
-                },
-              ]}
-            />
-            <Text style={monthlySpendingsGraph.legendLabel}>Last month</Text>
-          </HStack>
-          <Text style={monthlySpendingsGraph.legendLabel}>{`\$${Math.round(prevMonthSum)}`}</Text>
-        </VStack>
-        <VStack style={[monthlySpendingsGraph.legendText, { borderRightWidth: 0 }]}>
-          <HStack space="sm">
-            <Box
-              style={[
-                monthlySpendingsGraph.legendDot,
-                {
-                  backgroundColor: goalColor,
-                },
-              ]}
-            />
-            <Text style={monthlySpendingsGraph.legendLabel}>Spending goal</Text>
-          </HStack>
-          <Text style={monthlySpendingsGraph.legendLabel}>{`\$${Math.round(spendingGoal)}`}</Text>
-        </VStack>
-      </HStack>
+        <LineChart
+          data={{
+            labels: xData,
+            datasets: [
+              {
+                withDots: false,
+                color: (opacity = 1) => thisMonthColor,
+                data: yThisMonth,
+              },
+              {
+                withDots: false,
+                color: (opacity = 1) => previousMonthColor,
+                data: yPreviousMonth,
+              },
+              {
+                withDots: false,
+                color: (opacity = 1) => goalColor,
+                data: yGoal,
+              },
+            ],
+          }}
+          width={Dimensions.get('window').width * 0.9}
+          height={180}
+          yAxisLabel="$"
+          chartConfig={{
+            backgroundColor: '#041C2B',
+            backgroundGradientFrom: '#041C2B',
+            backgroundGradientTo: '#041C2B',
+            decimalPlaces: 0,
+            color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+          }}
+          bezier={true}
+          style={{
+            marginVertical: 8,
+            borderRadius: 16,
+            backgroundColor: '#041C2B',
+          }}
+        />
+        <HStack
+          space="sm"
+          style={{
+            flex: 1,
+            borderTopWidth: 1,
+            borderTopColor: '#A6AFBD',
+          }}>
+          <VStack style={monthlySpendingsGraph.legendText}>
+            <HStack space="sm">
+              <Box
+                style={[
+                  monthlySpendingsGraph.legendDot,
+                  {
+                    backgroundColor: thisMonthColor,
+                  },
+                ]}
+              />
+              <Text style={monthlySpendingsGraph.legendLabel}>This month</Text>
+            </HStack>
+            <Text style={monthlySpendingsGraph.legendLabel}>{`\$${Math.round(thisMonthSum)}`}</Text>
+          </VStack>
+          <VStack style={monthlySpendingsGraph.legendText}>
+            <HStack space="sm">
+              <Box
+                style={[
+                  monthlySpendingsGraph.legendDot,
+                  {
+                    backgroundColor: previousMonthColor,
+                  },
+                ]}
+              />
+              <Text style={monthlySpendingsGraph.legendLabel}>Last month</Text>
+            </HStack>
+            <Text style={monthlySpendingsGraph.legendLabel}>{`\$${Math.round(prevMonthSum)}`}</Text>
+          </VStack>
+          <VStack style={[monthlySpendingsGraph.legendText, { borderRightWidth: 0 }]}>
+            <HStack space="sm">
+              <Box
+                style={[
+                  monthlySpendingsGraph.legendDot,
+                  {
+                    backgroundColor: goalColor,
+                  },
+                ]}
+              />
+              <Text style={monthlySpendingsGraph.legendLabel}>Spending goal</Text>
+            </HStack>
+            <Text style={monthlySpendingsGraph.legendLabel}>{`\$${Math.round(spendingGoal)}`}</Text>
+          </VStack>
+        </HStack>
+      </Box>
     </VStack>
   );
 };
