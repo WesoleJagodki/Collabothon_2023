@@ -1,46 +1,9 @@
-import { MonthlySpendingsGraph } from '../Components/MonthlySpendingsGraph';
-import { Text, Box, Badge, Image, VStack } from '@gluestack-ui/themed';
-
+import { Text, Box, Image, VStack } from '@gluestack-ui/themed';
 import { commonStyle } from './CommonStyle';
-
-import { LineChart } from 'react-native-chart-kit';
-import { Dimensions, View } from 'react-native';
-import { chooseInterestsScreen } from './ChooseInterests/ChooseInterestsScreenStyle';
-import { dashboard } from './DashboardStyles';
-
-// legend: ['This month', 'Last month', 'Spending goal'],
-
-function SaldoBadgeDown() {
-  return (
-    <Badge shadow={4} rounded={20} style={dashboard.badge}>
-      <Box style={dashboard.badgeBox}>
-        <Text style={dashboard.saldoName}>Income</Text>
-        <View style={dashboard.saldoView}>
-          <Text style={dashboard.saldoValue}>$5632</Text>
-          <Text style={dashboard.saldoProcentDown}>-23,3%</Text>
-          <Image source={require('../Images/ic_Down.png')} style={dashboard.arrowDown} />
-        </View>
-        <Text style={dashboard.saldoComment}>Compared to ($7340 last month)</Text>
-      </Box>
-    </Badge>
-  );
-}
-
-function SaldoBadgeUp() {
-  return (
-    <Badge shadow={4} rounded={20} style={dashboard.badge}>
-      <Box style={dashboard.badgeBox}>
-        <Text style={dashboard.saldoName}>Income</Text>
-        <View style={dashboard.saldoView}>
-          <Text style={dashboard.saldoValue}>$5632</Text>
-          <Text style={dashboard.saldoProcentUp}>-23,3%</Text>
-          <Image source={require('../Images/ic_Up.png')} style={dashboard.arrowUp} />
-        </View>
-        <Text style={dashboard.saldoComment}>Compared to ($7340 last month)</Text>
-      </Box>
-    </Badge>
-  );
-}
+import { Dimensions } from 'react-native';
+import { textStyles } from '../TextStyle';
+import { MonthlySpendingsGraph } from '../Components/MonthlySpendingsGraph';
+import { SaldoBadgeDown, SaldoBadgeUp, Greeting } from '../Components/DashboardComponents';
 
 export function Dashboard({ navigation }: any) {
   // TODO: Add real data
@@ -60,6 +23,7 @@ export function Dashboard({ navigation }: any) {
   ];
   return (
     <VStack space="lg" style={commonStyle.appScreen}>
+      <Greeting />
       <MonthlySpendingsGraph
         month={9}
         spendingGoal={80}
