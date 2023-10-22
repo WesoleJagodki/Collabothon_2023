@@ -10,6 +10,7 @@ import { CameraScreen } from '../Screen/Camera/CameraScreen';
 import { Tutorial1, Tutorial2, Tutorial3 } from '../Screen/Tutorial/TutorialScreen';
 import { WelcomeScreen } from '../Screen/Welcome/WelcomeScreen';
 import { ChooseInterestsScreen } from '../Screen/ChooseInterests/ChooseInterestsScreen';
+import {Notifications} from "../Screen/Notifications/Notifications";
 
 const Stack = createStackNavigator();
 
@@ -42,6 +43,7 @@ export function RootStack() {
         component={RegistrationFinishedScreen}
         options={{ title: 'Registration Finished' }}
       />
+        <Stack.Screen name="Notifications" component={Notifications} options={{ title: 'Notifications' }} />
       <Stack.Screen name="RootTab" component={RootTab} options={{ title: 'Dashboard' }} />
     </Stack.Navigator>
   );

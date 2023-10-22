@@ -1,12 +1,33 @@
 import { Text, Box, Image, VStack, Button, ButtonText, Badge } from '@gluestack-ui/themed';
-import {React, useState} from 'react';
-import { textStyles } from '../../TextStyle';
+import * as ImagePicker from 'expo-image-picker';
+import React, {useState} from 'react';
 import { commonStyle } from '../CommonStyle';
 import {addAutomatic} from "./AddAutomaticScreenStyles";
 import {registrationFinishedScreen} from "../RegistrationFinished/RegistrationFinishedScreenStyle";
+import {account_detailsScreen} from "../AccountDetails/AccountDetailsStyle";
 
 export function AddAutomaticScreen({ navigation }: any) {
-    const [source, setSource] = useState(require('../../Images/camera.png'));
+    const [source, setSource] = useState<string>(require('../../Images/camera.png'));
+    const [pictureStyle, setPictureStyle] = useState(addAutomatic.image);
+
+    ImagePicker.useMediaLibraryPermissions();
+    ImagePicker.useCameraPermissions();
+
+    const pickImage = async () => {
+        const result = await ImagePicker.launchCameraAsync({
+            mediaTypes: ImagePicker.MediaTypeOptions.All,
+            allowsEditing: true,
+            aspect: [1, 1],
+            quality: 1,
+        });
+
+        console.log(result);
+
+        if (!result.canceled) {
+            setPictureStyle(account_detailsScreen.pickedPicture);
+            setSource(result.assets[0].uri);
+        }
+    };
 
   return (
     <Box style={commonStyle.appScreen}>
@@ -23,7 +44,7 @@ export function AddAutomaticScreen({ navigation }: any) {
         <Button
             style={registrationFinishedScreen.letsStartButton}
             onPress={() => navigation.navigate('LoginScreen')}>
-            <ButtonText>UPLOAD IMAGE</ButtonText>
+            <ButtonText onPress={() => pickImage()}>UPLOAD IMAGE</ButtonText>
         </Button>
     </Box>
   );
