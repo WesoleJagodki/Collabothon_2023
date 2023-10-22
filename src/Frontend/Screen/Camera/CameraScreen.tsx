@@ -22,7 +22,7 @@ function uploadImage(image: any) {
 
     formdata.append("file", image.base64);
 
-    const encodedPhoto = base64.encode(image.uri);
+    const encodedPhoto = base64.encode(image);
     console.log(encodedPhoto);
     formdata.append("file", encodedPhoto);
     let requestOptions = {
