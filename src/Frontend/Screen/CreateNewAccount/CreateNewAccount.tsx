@@ -21,6 +21,7 @@ import React from 'react';
 
 import { create_new_accountScreen } from './CreateNewAccountStyle';
 import { commonStyle } from '../CommonStyle';
+import {GetNotification} from "../../../Backend/PostgresSQL_User/GetNotification";
 
 export function CreateNewAccountScreen({ navigation }: any) {
   const [checkboxValue, setCheckboxValue] = React.useState(false);
@@ -144,7 +145,7 @@ export function CreateNewAccountScreen({ navigation }: any) {
             I agree to the Terms of Service and Privacy Policy
           </Text>
         </HStack>
-        <Button style={create_new_accountScreen.button} onPress={() => CreateNewUser()}>
+        <Button style={create_new_accountScreen.button} onPress={() => GetNotification()}>
           <Text style={create_new_accountScreen.button_text}>GET STARTED</Text>
         </Button>
         <Center>
