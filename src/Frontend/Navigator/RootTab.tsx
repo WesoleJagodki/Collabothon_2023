@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { rootTab } from './RootTabStyle';
 import { Dashboard } from '../Screen/Dashboard';
+import {AddAutomaticScreen} from "../Screen/AddAutomatic/AddAutomaticScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -65,7 +66,7 @@ export const RootTab = function () {
       />
       <Tab.Screen
         name="Add"
-        component={Dashboard}
+        component={AddAutomaticScreen}
         options={{
           title: 'Add',
           tabBarIcon: TabIcon({ uri: IconAdd }),
