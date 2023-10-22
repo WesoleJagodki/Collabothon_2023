@@ -3,8 +3,43 @@ import React from 'react'
 import {Text, View, TouchableOpacity, Alert, ImageBackground} from 'react-native'
 import {Camera, CameraType} from 'expo-camera'
 import {cameraScreen} from "./CameraScreenStyle";
+import {Box} from "@gluestack-ui/themed";
 
 let camera: Camera
+let base64 = require('base-64');
+
+function uploadImage(image: any) {
+    console.log("Before if");
+    if (!image?.uri) {
+        return;
+    }
+    console.log("After if");
+    let localUri = image.uri || "";
+    let filename = localUri.split("/").pop() || "";
+
+    let match = /\.(\w+)$/.exec(filename);
+    let formdata = new FormData();
+
+    formdata.append("file", image.base64);
+
+    const encodedPhoto = base64.encode("Test");
+    console.log(encodedPhoto);
+    formdata.append("file", encodedPhoto);
+    let requestOptions = {
+        method: "POST",
+        body: formdata,
+        redirect: "follow",
+    };
+
+    fetch(
+        "http://192.168.31.106:5000/process-receit",
+        requestOptions
+    )
+        .then((response) => response.text())
+        .then((result) => console.log(result))
+        .catch((error) => console.log("error", error));
+}
+
 
 export function CameraScreen() {
     const [startCamera, setStartCamera] = React.useState(false)
@@ -13,8 +48,9 @@ export function CameraScreen() {
     const [cameraType, setCameraType] = React.useState(CameraType.back)
     const [flashMode, setFlashMode] = React.useState('off')
 
+
     const __startCamera = async () => {
-        const {status} = await Camera.requestPermissionsAsync()
+        const {status} = await Camera.requestCameraPermissionsAsync();
         console.log(status)
         if (status === 'granted') {
             setStartCamera(true)
@@ -25,11 +61,16 @@ export function CameraScreen() {
     const __takePicture = async () => {
         const photo: any = await camera.takePictureAsync()
         console.log(photo)
+        uploadImage(photo);
         setPreviewVisible(true)
         //setStartCamera(false)
         setCapturedImage(photo)
     }
-    const __savePhoto = () => {}
+    const __savePhoto = async () => {
+        const photo: any = await camera.takePictureAsync()
+        console.log(photo)
+        uploadImage(photo);
+    }
     const __retakePicture = () => {
         setCapturedImage(null)
         setPreviewVisible(false)
@@ -53,7 +94,7 @@ export function CameraScreen() {
     }
 
     return (
-        <View style={cameraScreen.container}>
+        <Box style={cameraScreen.container}>
             {startCamera ? (
                 <View
                     style={{
@@ -193,7 +234,7 @@ export function CameraScreen() {
             )}
 
             <StatusBar style="auto" />
-        </View>
+        </Box>
     )
 }
 

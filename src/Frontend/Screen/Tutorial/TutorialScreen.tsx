@@ -31,7 +31,7 @@ export function TutorialScreen({
       <Text
         style={tutorialScreen.skipButton}
         onPress={() => {
-          navigation.navigate('LoginScreen');
+          navigation.navigate('SignupLoginScreen');
         }}>
         Skip
       </Text>
