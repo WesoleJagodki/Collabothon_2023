@@ -91,7 +91,7 @@ export function CameraScreen() {
     return (
         <Box style={cameraScreen.container}>
             {startCamera ? (
-                <Box
+                <View
                     style={{
                         flex: 1,
                         width: '100%'
@@ -108,7 +108,7 @@ export function CameraScreen() {
                                 camera = r
                             }}
                         >
-                            <Box
+                            <View
                                 style={{
                                     flex: 1,
                                     width: '100%',
@@ -116,7 +116,7 @@ export function CameraScreen() {
                                     flexDirection: 'row'
                                 }}
                             >
-                                <Box
+                                <View
                                     style={{
                                         position: 'absolute',
                                         left: '5%',
@@ -159,8 +159,8 @@ export function CameraScreen() {
                                             {cameraType === 'front' ? '🤳' : '📷'}
                                         </Text>
                                     </TouchableOpacity>
-                                </Box>
-                                <Box
+                                </View>
+                                <View
                                     style={{
                                         position: 'absolute',
                                         bottom: 0,
@@ -171,7 +171,7 @@ export function CameraScreen() {
                                         justifyContent: 'space-between'
                                     }}
                                 >
-                                    <Box
+                                    <View
                                         style={{
                                             alignSelf: 'center',
                                             flex: 1,
@@ -188,14 +188,14 @@ export function CameraScreen() {
                                                 backgroundColor: '#fff'
                                             }}
                                         />
-                                    </Box>
-                                </Box>
-                            </Box>
+                                    </View>
+                                </View>
+                            </View>
                         </Camera>
                     )}
-                </Box>
+                </View>
             ) : (
-                <Box
+                <View
                     style={{
                         flex: 1,
                         backgroundColor: '#fff',
@@ -225,7 +225,7 @@ export function CameraScreen() {
                             Take picture
                         </Text>
                     </TouchableOpacity>
-                </Box>
+                </View>
             )}
 
             <StatusBar style="auto" />
@@ -236,7 +236,7 @@ export function CameraScreen() {
 const CameraPreview = ({photo, retakePicture, savePhoto}: any) => {
     console.log('sdsfds', photo)
     return (
-        <Box
+        <View
             style={{
                 backgroundColor: 'transparent',
                 flex: 1,
@@ -250,7 +250,7 @@ const CameraPreview = ({photo, retakePicture, savePhoto}: any) => {
                     flex: 1
                 }}
             >
-                <Box
+                <View
                     style={{
                         flex: 1,
                         flexDirection: 'column',
@@ -258,7 +258,7 @@ const CameraPreview = ({photo, retakePicture, savePhoto}: any) => {
                         justifyContent: 'flex-end'
                     }}
                 >
-                    <Box
+                    <View
                         style={{
                             flexDirection: 'row',
                             justifyContent: 'space-between'
@@ -302,9 +302,9 @@ const CameraPreview = ({photo, retakePicture, savePhoto}: any) => {
                                 save photo
                             </Text>
                         </TouchableOpacity>
-                    </Box>
-                </Box>
+                    </View>
+                </View>
             </ImageBackground>
-        </Box>
+        </View>
     )
 }
