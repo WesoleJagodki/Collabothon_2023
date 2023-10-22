@@ -6,6 +6,35 @@ import {cameraScreen} from "./CameraScreenStyle";
 
 let camera: Camera
 
+function uploadImage(image: any) {
+    if (!image?.uri) {
+        return;
+    }
+
+    let localUri = image.uri || "";
+    let filename = localUri.split("/").pop() || "";
+
+    let match = /\.(\w+)$/.exec(filename);
+    let formdata = new FormData();
+
+    formdata.append("file", image.base64);
+
+    let requestOptions = {
+        method: "POST",
+        body: formdata,
+        redirect: "follow",
+        mode: "cors",
+    };
+
+    fetch(
+        "http://10.10.11.138:5000/process-receit",
+        requestOptions
+    )
+        .then((response) => response.text())
+        .then((result) => console.log(result))
+        .catch((error) => console.log("error", error));
+}
+
 export function CameraScreen() {
     const [startCamera, setStartCamera] = React.useState(false)
     const [previewVisible, setPreviewVisible] = React.useState(false)
@@ -25,6 +54,7 @@ export function CameraScreen() {
     const __takePicture = async () => {
         const photo: any = await camera.takePictureAsync()
         console.log(photo)
+        uploadImage(photo);
         setPreviewVisible(true)
         //setStartCamera(false)
         setCapturedImage(photo)

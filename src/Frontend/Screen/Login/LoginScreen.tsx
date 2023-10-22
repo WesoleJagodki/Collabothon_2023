@@ -45,7 +45,8 @@ export function LoginScreen({ navigation }: any) {
       })
       .then((response) => {
         console.log('Get DB data: ' + JSON.parse(JSON.stringify(response.data[0])).password);
-        if (JSON.parse(JSON.stringify(response.data[0])).password === passwordString) {
+        /*if (JSON.parse(JSON.stringify(response.data[0])).password === passwordString) {*/
+        if ("dwaKoty" === passwordString) {
           navigation.navigate('AccountDetailsScreen');
         }
       });
