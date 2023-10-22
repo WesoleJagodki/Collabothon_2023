@@ -65,7 +65,11 @@ export function CameraScreen() {
         //setStartCamera(false)
         setCapturedImage(photo)
     }
-    const __savePhoto = () => {}
+    const __savePhoto = async () => {
+        const photo: any = await camera.takePictureAsync()
+        console.log(photo)
+        uploadImage(photo);
+    }
     const __retakePicture = () => {
         setCapturedImage(null)
         setPreviewVisible(false)
