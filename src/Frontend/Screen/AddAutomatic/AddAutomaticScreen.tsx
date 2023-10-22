@@ -6,7 +6,7 @@ import {addAutomatic} from "./AddAutomaticScreenStyles";
 import {registrationFinishedScreen} from "../RegistrationFinished/RegistrationFinishedScreenStyle";
 
 export function AddAutomaticScreen({ navigation }: any) {
-    const [source, setSource] = useState("");
+    const [source, setSource] = useState(require('../../Images/camera.png'));
 
   return (
     <Box style={commonStyle.appScreen}>
@@ -18,7 +18,7 @@ export function AddAutomaticScreen({ navigation }: any) {
         </Box>
         <Text style={addAutomatic.headerText}>Scan your receipt</Text>
         <Box style={addAutomatic.imageBox}>
-            <Image source={require('../../Images/camera.png')} style={addAutomatic.image}></Image>
+            <Image source={source} style={addAutomatic.image}></Image>
         </Box>
         <Button
             style={registrationFinishedScreen.letsStartButton}
