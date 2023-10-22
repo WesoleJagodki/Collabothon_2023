@@ -32,7 +32,7 @@ function uploadImage(image: any) {
     };
 
     fetch(
-        "http://10.10.11.138:5000/process-receit",
+        "http://192.168.31.106:5000/process-receit",
         requestOptions
     )
         .then((response) => response.text())
