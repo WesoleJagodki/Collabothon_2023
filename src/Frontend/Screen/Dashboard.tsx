@@ -46,7 +46,7 @@ export function Dashboard({ navigation }: any) {
   return (
     <ScrollView style={{ backgroundColor: commonStyle.appScreen.backgroundColor }}>
       <VStack space="lg" style={commonStyle.appScreen}>
-        <Greeting />
+        <Greeting navigation={navigation} />
         <MonthlySpendingsGraph
           month={9}
           spendingGoal={80}
