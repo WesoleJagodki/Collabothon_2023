@@ -67,7 +67,7 @@ export function LoginScreen({ navigation }: any) {
   };
 
   const LogIn = async () => {
-    if (emailString !== '' && passwordString === "dwaKoty") {
+    if (emailString !== '' && passwordString == "dwaKoty") {
       //GetEmail();
       navigation.navigate('AccountDetailsScreen');
     }
