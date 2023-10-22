@@ -7,7 +7,6 @@ export const dashboard = StyleSheet.create({
         height: screen_width * 0.35,
         backgroundColor: '#041C2B',
         borderRadius: 10,
-        marginBottom:10,
     },
     badgeBox: {
         paddingLeft: 12,

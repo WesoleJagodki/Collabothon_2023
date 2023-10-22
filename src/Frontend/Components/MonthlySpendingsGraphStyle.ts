@@ -12,7 +12,7 @@ export const monthlySpendingsGraph = StyleSheet.create({
   },
   legendLabel: {
     ...textStyles.body,
-    fontSize: 8,
+    fontSize: 10,
     textAlign: 'center',
   },
   legendDot: {
