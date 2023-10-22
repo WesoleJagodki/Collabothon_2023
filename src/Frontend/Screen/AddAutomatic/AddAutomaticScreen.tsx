@@ -24,7 +24,7 @@ export function AddAutomaticScreen({ navigation }: any) {
         console.log(result);
 
         if (!result.canceled) {
-            setPictureStyle(account_detailsScreen.pickedPicture);
+            //setPictureStyle(account_detailsScreen.pickedPicture);
             setSource(result.assets[0].uri);
         }
     };

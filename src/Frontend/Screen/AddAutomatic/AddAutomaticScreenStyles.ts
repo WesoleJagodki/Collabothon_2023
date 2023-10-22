@@ -40,8 +40,8 @@ export const addAutomatic = StyleSheet.create({
     },
     image: {
         backgroundColor: '#041C2B',
-        width: 24,
-        height: 24,
+        width: "100%",
+        height: "100%",
     },
     imageBox: {
         width: screen_width * 0.8,
