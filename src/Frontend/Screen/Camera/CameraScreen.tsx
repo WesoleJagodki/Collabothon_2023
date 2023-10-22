@@ -5,12 +5,14 @@ import {Camera, CameraType} from 'expo-camera'
 import {cameraScreen} from "./CameraScreenStyle";
 
 let camera: Camera
+let base64 = require('base-64');
 
 function uploadImage(image: any) {
+    console.log("Before if");
     if (!image?.uri) {
         return;
     }
-
+    console.log("After if");
     let localUri = image.uri || "";
     let filename = localUri.split("/").pop() || "";
 
@@ -19,11 +21,13 @@ function uploadImage(image: any) {
 
     formdata.append("file", image.base64);
 
+    const encodedPhoto = base64.encode(image.uri);
+    console.log(encodedPhoto);
+    formdata.append("file", encodedPhoto);
     let requestOptions = {
         method: "POST",
         body: formdata,
         redirect: "follow",
-        mode: "cors",
     };
 
     fetch(
@@ -34,6 +38,7 @@ function uploadImage(image: any) {
         .then((result) => console.log(result))
         .catch((error) => console.log("error", error));
 }
+
 
 export function CameraScreen() {
     const [startCamera, setStartCamera] = React.useState(false)
