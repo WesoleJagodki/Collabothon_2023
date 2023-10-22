@@ -1,6 +1,6 @@
 import { LineChart } from 'react-native-chart-kit';
 import { Dimensions } from 'react-native';
-import { HStack, Text, VStack } from '@gluestack-ui/themed';
+import { Box, HStack, Text, VStack } from '@gluestack-ui/themed';
 import { Center } from '@gluestack-ui/config/build/theme';
 import { monthlySpendingsGraph } from './MonthlySpendingsGraphStyle';
 import { textStyles } from '../TextStyle';
@@ -16,6 +16,10 @@ export type Props = {
   lastMonth: DailySpends[];
   spendingGoal: number;
 };
+
+const thisMonthColor = 'rgba(106, 1, 143, 1)';
+const previousMonthColor = 'rgba(162, 210, 252, 1)';
+const goalColor = 'rgba(0, 177, 106, 1)';
 
 export const MonthlySpendingsGraph = ({ month, thisMonth, lastMonth, spendingGoal }: Props) => {
   const uniqueDays = new Set(
@@ -42,11 +46,15 @@ export const MonthlySpendingsGraph = ({ month, thisMonth, lastMonth, spendingGoa
     return spending;
   });
 
-  const yGoal = new Array(uniqueDays.size).fill(spendingGoal);
+  const yGoal = new Array(uniqueDays.size).fill(spendingGoal / uniqueDays.size);
 
-  const thisMonthColor = 'rgba(106, 1, 143, 1)';
-  const previousMonthColor = 'rgba(162, 210, 252, 1)';
-  const goalColor = 'rgba(0, 177, 106, 1)';
+  const thisMonthSum = yThisMonth.reduce(
+    (previousValue, currentValue) => previousValue + currentValue,
+  );
+
+  const prevMonthSum = yPreviousMonth.reduce(
+    (previousValue, currentValue) => previousValue + currentValue,
+  );
 
   return (
     <VStack
@@ -99,18 +107,48 @@ export const MonthlySpendingsGraph = ({ month, thisMonth, lastMonth, spendingGoa
           borderTopWidth: 1,
           borderTopColor: '#A6AFBD',
         }}>
-        <HStack space="sm" style={monthlySpendingsGraph.legendText}>
-          <Text style={[monthlySpendingsGraph.legendLabel, { color: thisMonthColor }]}>-</Text>
-          <Text style={monthlySpendingsGraph.legendLabel}>This month</Text>
-        </HStack>
-        <HStack space="sm" style={monthlySpendingsGraph.legendText}>
-          <Text style={[monthlySpendingsGraph.legendLabel, { color: thisMonthColor }]}>-</Text>
-          <Text style={monthlySpendingsGraph.legendLabel}>Last month</Text>
-        </HStack>
-        <HStack space="sm" style={[monthlySpendingsGraph.legendText, { borderRightWidth: 0 }]}>
-          <Text style={[monthlySpendingsGraph.legendLabel, { color: thisMonthColor }]}>-</Text>
-          <Text style={monthlySpendingsGraph.legendLabel}>Spending goal</Text>
-        </HStack>
+        <VStack style={monthlySpendingsGraph.legendText}>
+          <HStack space="sm">
+            <Box
+              style={[
+                monthlySpendingsGraph.legendDot,
+                {
+                  backgroundColor: thisMonthColor,
+                },
+              ]}
+            />
+            <Text style={monthlySpendingsGraph.legendLabel}>This month</Text>
+          </HStack>
+          <Text style={monthlySpendingsGraph.legendLabel}>{`\$${Math.round(thisMonthSum)}`}</Text>
+        </VStack>
+        <VStack style={monthlySpendingsGraph.legendText}>
+          <HStack space="sm">
+            <Box
+              style={[
+                monthlySpendingsGraph.legendDot,
+                {
+                  backgroundColor: previousMonthColor,
+                },
+              ]}
+            />
+            <Text style={monthlySpendingsGraph.legendLabel}>Last month</Text>
+          </HStack>
+          <Text style={monthlySpendingsGraph.legendLabel}>{`\$${Math.round(prevMonthSum)}`}</Text>
+        </VStack>
+        <VStack style={[monthlySpendingsGraph.legendText, { borderRightWidth: 0 }]}>
+          <HStack space="sm">
+            <Box
+              style={[
+                monthlySpendingsGraph.legendDot,
+                {
+                  backgroundColor: goalColor,
+                },
+              ]}
+            />
+            <Text style={monthlySpendingsGraph.legendLabel}>Spending goal</Text>
+          </HStack>
+          <Text style={monthlySpendingsGraph.legendLabel}>{`\$${Math.round(spendingGoal)}`}</Text>
+        </VStack>
       </HStack>
     </VStack>
   );

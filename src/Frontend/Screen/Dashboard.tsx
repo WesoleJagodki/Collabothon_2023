@@ -51,6 +51,7 @@ function SaldoBadgeUp() {
 
 
 export function Dashboard({ navigation }: any) {
+  // TODO: Add real data
   const thisMonth = [
     { dayOfMonth: 1, spending: Math.random() * 100 },
     { dayOfMonth: 2, spending: Math.random() * 100 },
@@ -63,6 +64,7 @@ export function Dashboard({ navigation }: any) {
     { dayOfMonth: 2, spending: Math.random() * 100 },
     { dayOfMonth: 3, spending: Math.random() * 100 },
     { dayOfMonth: 4, spending: Math.random() * 100 },
+    { dayOfMonth: 5, spending: Math.random() * 100 },
   ];
   return (
     <Box style={commonStyle.appScreen}>
